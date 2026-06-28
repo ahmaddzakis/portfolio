@@ -1,0 +1,901 @@
+﻿<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ahmad portfolio ï¿½ Lead Game & UI/UX Designer crafting immersive worlds and high-performance mobile experiences." />
+    <title>Ahmad Portfolio | Game & UI/UX Designer</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                purple: '#B026FF',
+                magenta: '#C840EB',
+                dark: '#0F0F0F',
+                surface: '#161616',
+                border: '#222222',
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0f0f0f;
+        color: #ffffff;
+      }
+
+      /* Hero radial glow */
+      .hero-bg-glow {
+        background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(176, 38, 255, 0.18), transparent 70%);
+        pointer-events: none;
+      }
+
+      /* Navbar smooth animations */
+      #navbar {
+        animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Nav link hover underline - enhanced */
+      .nav-link {
+        position: relative;
+        color: #a0a0a0;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        font-weight: 500;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #b026ff, #c840eb);
+        transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border-radius: 2px;
+      }
+      .nav-link:hover {
+        color: #ffffff;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Badge pulse dot - enhanced */
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(168, 204, 68, 0.7);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.4);
+        }
+      }
+      .pulse-dot {
+        animation: pulse-dot 2.5s ease-in-out infinite;
+      }
+
+      /* CTA hover glow + lift - enhanced */
+      .btn-primary {
+        transition:
+          box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+          background-color 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+      .btn-primary:hover {
+        box-shadow:
+          0 0 40px rgba(176, 38, 255, 0.65),
+          inset 0 0 20px rgba(200, 64, 235, 0.2);
+        transform: translateY(-3px);
+      }
+      .btn-primary:active {
+        transform: translateY(-1px);
+      }
+
+      /* Fade-in animation for elements */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      /* Project card hover effect */
+      .project-card {
+        animation: fadeInUp 0.8s ease-out backwards;
+      }
+      .project-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .project-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .project-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      /* Skill card smooth hover */
+      .skill-card {
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .skill-card:hover {
+        border-color: rgba(176, 38, 255, 0.6);
+        background: #151515;
+        transform: translateY(-4px);
+      }
+
+      /* Section separator glow enhanced */
+      .section-divider {
+        background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.5), transparent);
+        animation: pulse 3s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* Scrollbar enhanced */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f0f0f;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #b026ff, #a8cc44);
+        border-radius: 10px;
+        transition: background 0.3s ease;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #c840eb, #b8dc54);
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Link transitions */
+      a {
+        transition:
+          color 0.3s ease,
+          opacity 0.3s ease;
+      }
+
+      /* Timeline dot interaction */
+      .timeline-item span {
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <!-- =====================================================
+       NAVBAR
+  ===================================================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-md bg-[#0F0F0F]/80">
+      <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between gap-6">
+        <!-- LEFT: Brand -->
+        <a href="#" id="brand-logo" class="shrink-0 hover:opacity-80 transition-opacity duration-200">
+          <img src="assets/images/ADLogos.png" alt="Logo" class="h-9 w-auto object-contain hover:opacity-80 transition-opacity" />
+        </a>
+
+        <!-- CENTER: Nav Links -->
+        <ul id="nav-links" class="hidden md:flex items-center gap-8">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- RIGHT: Download CV -->
+        <div class="shrink-0">
+          <a
+            id="btn-download-cv"
+            href="docs/cv.pdf"
+            download
+            class="btn-primary inline-flex items-center gap-2 px-5 py-2 rounded-md text-[0.7rem] font-bold tracking-widest uppercase text-white bg-[#B026FF] border border-[#C840EB] hover:bg-[#C840EB] transition-colors duration-200"
+          >
+            <!-- Download icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2
+                 M7 10l5 5 5-5
+                 M12 15V3"
+              />
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =====================================================
+       HERO SECTION
+  ===================================================== -->
+    <main>
+      <section id="hero" class="relative min-h-[85vh] flex items-center pt-16 overflow-hidden">
+        <!-- Radial purple glow -->
+        <div class="absolute inset-0 hero-bg-glow" aria-hidden="true"></div>
+
+        <!-- Subtle dot/grid texture -->
+        <div
+          class="absolute inset-0 opacity-[0.03]"
+          style="background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px); background-size: 64px 64px"
+          aria-hidden="true"
+        ></div>
+
+        <!-- ── RIGHT: Batik Pattern (absolute, full-bleed right, staggered) ── -->
+        <div class="absolute inset-y-0 right-0 w-[55%] flex gap-2 opacity-15 pointer-events-none overflow-hidden" aria-hidden="true">
+          <!-- Kolom 1: offset 0 -->
+          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(-5%)">
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+          </div>
+
+          <!-- Kolom 2: offset -20% (turun lebih bawah) -->
+          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(15%)">
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+          </div>
+
+          <!-- Kolom 3: offset -10% -->
+          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(-15%)">
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+          </div>
+
+          <!-- Kolom 4: offset +5% -->
+          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(5%)">
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+          </div>
+
+          <!-- Fade: left edge -->
+          <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0F0F0F] to-transparent pointer-events-none"></div>
+          <!-- Fade: bottom edge -->
+          <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0F0F0F] to-transparent pointer-events-none"></div>
+          <!-- Fade: top edge -->
+          <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0F0F0F] to-transparent pointer-events-none"></div>
+          <!-- Accent glow -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-80 h-80 rounded-full bg-[#B026FF]/10 blur-3xl"></div>
+          </div>
+        </div>
+        <!-- /RIGHT -->
+
+        <!-- Hero content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-12 w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <!-- ── LEFT: Text & CTA ── -->
+            <div class="relative z-10 flex flex-col">
+              <!-- Availability Badge -->
+              <div id="availability-badge" class="flex items-center gap-2.5 mb-8">
+                <span class="relative flex h-2.5 w-2.5 shrink-0">
+                  <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-70"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400"></span>
+                </span>
+                <span class="text-sm font-medium tracking-wide" style="color: #a8cc44"> Available for New Opportunities </span>
+              </div>
+
+              <!-- Sub-title / Role -->
+              <p id="hero-role" class="text-[0.65rem] md:text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-5">GAME DESIGNER &bull; QA GAME &bull; MOBILE DEVELOPER</p>
+
+              <!-- H1 Headline -->
+              <h1 id="hero-headline" class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white max-w-[18ch] mb-8">
+                Crafting Engaging Games &amp; High&#8209;Performance
+                <span style="color: #b026ff">Mobile Apps.</span>
+              </h1>
+
+              <!-- Description -->
+              <p id="hero-description" class="text-[#707070] text-base md:text-[1.05rem] leading-[1.75] max-w-[48ch] mb-10">
+                Combining expertise in game mechanics design, rigorous quality assurance, and robust mobile application development to deliver a seamless interactive experience.
+              </p>
+
+              <!-- CTA Button -->
+              <a
+                id="btn-view-projects"
+                href="#projects"
+                class="btn-primary w-fit self-start inline-flex items-center gap-3 px-7 py-3.5 rounded-md font-semibold text-sm tracking-wide text-white bg-[#B026FF] border border-[#C840EB] hover:bg-[#C840EB] transition-colors duration-200"
+              >
+                VIEW MY PROJECTS
+                <span class="text-base leading-none" aria-hidden="true">&#8594;</span>
+              </a>
+            </div>
+            <!-- /LEFT -->
+          </div>
+        </div>
+        <!-- /Hero content -->
+      </section>
+
+      <!-- =====================================================
+         FEATURED WORK SECTION
+    ===================================================== -->
+      <section id="projects" class="relative py-24 lg:py-32 overflow-hidden">
+        <!-- Subtle top separator glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/40 to-transparent" aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <!-- Section Header -->
+          <div class="mb-14">
+            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-3">Featured Work</h2>
+            <!-- Accent underline -->
+            <div class="h-[3px] w-12 rounded-full bg-[#B026FF]"></div>
+          </div>
+
+          <!-- ── GRID LAYOUT ─────────────────────────────────────────────
+             Mobile : 1 col
+             Tablet+: left col (2 stacked cards) | right col (1 tall card)
+        ─────────────────────────────────────────────────────────────── -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- LEFT COLUMN: two stacked cards -->
+            <div class="flex flex-col gap-5">
+              <!-- ── CARD 1 : Project MIRAIku ──────────────── -->
+              <article
+                id="card-miraiku"
+                class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#B026FF]/50 hover:-translate-y-1 transition-all duration-300 ease-out"
+              >
+                <!-- Thumbnail / Mock-up area -->
+                <div class="relative w-full aspect-[16/9] bg-[#1a1a1a] overflow-hidden flex items-center justify-center">
+                  <!-- Background gradient art -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-[#1c1c2e] via-[#0d0d1a] to-[#111111]"></div>
+                  <!-- Decorative glow ring -->
+                  <div class="absolute w-48 h-48 rounded-full bg-[#B026FF]/10 blur-3xl"></div>
+                  <!-- Phone silhouette SVG -->
+                  <svg class="relative z-10 w-24 h-auto text-white/10 drop-shadow-2xl" viewBox="0 0 64 120" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="0" width="56" height="120" rx="10" fill="#2a2a3e" />
+                    <rect x="8" y="6" width="48" height="96" rx="6" fill="#141420" />
+                    <circle cx="32" cy="112" r="4" fill="#3a3a5e" />
+                    <rect x="24" y="2" width="16" height="3" rx="1.5" fill="#3a3a5e" />
+                    <!-- Glowing screen content hint -->
+                    <rect x="12" y="20" width="40" height="6" rx="3" fill="#B026FF" opacity="0.4" />
+                    <rect x="12" y="32" width="28" height="3" rx="1.5" fill="#ffffff" opacity="0.12" />
+                    <rect x="12" y="38" width="36" height="3" rx="1.5" fill="#ffffff" opacity="0.08" />
+                    <rect x="12" y="44" width="20" height="3" rx="1.5" fill="#ffffff" opacity="0.08" />
+                  </svg>
+                  <!-- Corner badge -->
+                  <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#B026FF]/20 text-[#B026FF] border border-[#B026FF]/25"> Mobile </span>
+                </div>
+
+                <!-- Card Body -->
+                <div class="p-6 flex flex-col flex-1">
+                  <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Analisis Seluler &bull; 2026</p>
+                  <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#C840EB] transition-colors duration-200">Project MIRAIku</h3>
+                  <p class="text-[#686868] text-sm leading-[1.7] flex-1">An innovative mobile solution focused on user-centric design and seamless client-side data streams, built for maintaining 60 fps performance at scale.</p>
+                  <a href="#" class="project-link mt-5 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
+                    VIEW CASE STUDY
+                    <span>&#8594;</span>
+                  </a>
+                </div>
+              </article>
+              <!-- /Card 1 -->
+
+              <!-- ── CARD 2 : Project Nightfall ────────────── -->
+              <article
+                id="card-nightfall"
+                class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#B026FF]/50 hover:-translate-y-1 transition-all duration-300 ease-out"
+              >
+                <!-- Thumbnail -->
+                <div class="relative w-full aspect-[16/9] bg-[#0e0e0e] overflow-hidden flex items-center justify-center">
+                  <div class="absolute inset-0 bg-gradient-to-br from-[#0a0a12] via-[#111118] to-[#1a0a0a]"></div>
+                  <div class="absolute w-56 h-32 rounded-full bg-red-900/15 blur-3xl"></div>
+                  <!-- Handheld console silhouette -->
+                  <svg class="relative z-10 w-32 h-auto" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Body -->
+                    <rect x="5" y="15" width="110" height="52" rx="14" fill="#1e1e26" />
+                    <!-- Screen -->
+                    <rect x="28" y="22" width="64" height="38" rx="5" fill="#0d0d14" />
+                    <!-- Screen glow content -->
+                    <rect x="32" y="26" width="56" height="30" rx="3" fill="#1a0010" opacity="0.8" />
+                    <text x="60" y="45" font-size="10" fill="#ff2255" opacity="0.5" text-anchor="middle" font-family="monospace">NIGHTFALL</text>
+                    <!-- D-pad -->
+                    <rect x="12" y="32" width="6" height="18" rx="2" fill="#2a2a35" />
+                    <rect x="8" y="36" width="14" height="10" rx="2" fill="#2a2a35" />
+                    <!-- Buttons -->
+                    <circle cx="102" cy="34" r="4" fill="#3a1020" />
+                    <circle cx="110" cy="41" r="4" fill="#3a1020" />
+                    <circle cx="94" cy="41" r="4" fill="#3a1020" />
+                    <circle cx="102" cy="48" r="4" fill="#3a1020" />
+                  </svg>
+                  <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-red-900/20 text-red-400 border border-red-800/30"> Game </span>
+                </div>
+
+                <!-- Card Body -->
+                <div class="p-6 flex flex-col flex-1">
+                  <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Mekanik &amp; Desain Game</p>
+                  <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#C840EB] transition-colors duration-200">Project Nightfall</h3>
+                  <p class="text-[#686868] text-sm leading-[1.7] flex-1">Dive into survival horror mechanics and atmosphere lore with visibility-driven lighting solutions to achieve spine-paper levels of tension and dread.</p>
+                  <a href="#" class="project-link mt-5 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
+                    EXPLORE MECHANICS
+                    <span>&#8594;</span>
+                  </a>
+                </div>
+              </article>
+              <!-- /Card 2 -->
+            </div>
+            <!-- /Left column -->
+
+            <!-- RIGHT COLUMN: tall single card -->
+            <!-- ── CARD 3 : UX Research Hub ──────────────── -->
+            <article id="card-ux-hub" class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#B026FF]/50 hover:-translate-y-1 transition-all duration-300 ease-out">
+              <!-- Thumbnail — taller on desktop to match left column height -->
+              <div class="relative w-full aspect-[4/3] md:flex-1 bg-[#0e0e0e] overflow-hidden flex items-center justify-center min-h-[260px]">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#0d0d1a] via-[#0e0e18] to-[#12121e]"></div>
+                <div class="absolute w-72 h-40 rounded-full bg-[#B026FF]/08 blur-3xl"></div>
+                <!-- Monitor + analytics mock-up -->
+                <svg class="relative z-10 w-52 h-auto" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Monitor body -->
+                  <rect x="10" y="10" width="180" height="110" rx="8" fill="#1e1e2e" />
+                  <rect x="14" y="14" width="172" height="98" rx="5" fill="#0d0d1a" />
+                  <!-- Stand -->
+                  <rect x="90" y="120" width="20" height="12" rx="2" fill="#1e1e2e" />
+                  <rect x="75" y="132" width="50" height="6" rx="3" fill="#1e1e2e" />
+                  <!-- Screen: chart bars -->
+                  <rect x="22" y="82" width="14" height="24" rx="2" fill="#B026FF" opacity="0.7" />
+                  <rect x="40" y="68" width="14" height="38" rx="2" fill="#B026FF" opacity="0.5" />
+                  <rect x="58" y="56" width="14" height="50" rx="2" fill="#B026FF" opacity="0.85" />
+                  <rect x="76" y="72" width="14" height="34" rx="2" fill="#B026FF" opacity="0.45" />
+                  <rect x="94" y="48" width="14" height="58" rx="2" fill="#C840EB" opacity="0.9" />
+                  <rect x="112" y="64" width="14" height="42" rx="2" fill="#B026FF" opacity="0.55" />
+                  <!-- Screen: line chart -->
+                  <polyline points="22,78 40,65 58,52 76,68 94,45 112,61 130,50 148,40" stroke="#a8cc44" stroke-width="1.5" fill="none" opacity="0.6" />
+                  <!-- Labels -->
+                  <rect x="130" y="22" width="50" height="7" rx="3" fill="#ffffff" opacity="0.06" />
+                  <rect x="130" y="33" width="36" height="5" rx="2.5" fill="#B026FF" opacity="0.3" />
+                  <rect x="130" y="42" width="44" height="5" rx="2.5" fill="#ffffff" opacity="0.05" />
+                  <rect x="130" y="51" width="30" height="5" rx="2.5" fill="#ffffff" opacity="0.05" />
+                </svg>
+                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#B026FF]/15 text-[#C840EB] border border-[#B026FF]/25"> UX / Research </span>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-6 md:p-8 flex flex-col">
+                <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Strategi &amp; Riset UX</p>
+                <h3 class="text-xl font-bold text-white mb-4 group-hover:text-[#C840EB] transition-colors duration-200">UX Research Hub</h3>
+                <p class="text-[#686868] text-sm leading-[1.7] mb-6">
+                  Data-driven research and interaction prototyping for enterprise-scale solutions. Focused on crafting surprise yet intuitive flows that keep conversion metrics moving upward.
+                </p>
+
+                <!-- Stats row -->
+                <div class="flex gap-6 mb-6">
+                  <div>
+                    <p class="text-xl font-black text-white">94<span class="text-[#B026FF]">%</span></p>
+                    <p class="text-[0.6rem] uppercase tracking-widest text-neutral-600 mt-0.5">Satisfaction</p>
+                  </div>
+                  <div>
+                    <p class="text-xl font-black text-white">3x<span class="text-[#B026FF]"></span></p>
+                    <p class="text-[0.6rem] uppercase tracking-widest text-neutral-600 mt-0.5">Retention</p>
+                  </div>
+                  <div>
+                    <p class="text-xl font-black text-white">12<span class="text-[#B026FF]">+</span></p>
+                    <p class="text-[0.6rem] uppercase tracking-widest text-neutral-600 mt-0.5">Studies</p>
+                  </div>
+                </div>
+
+                <a href="#" class="project-link inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
+                  READ FINDINGS
+                  <span>&#8594;</span>
+                </a>
+              </div>
+            </article>
+            <!-- /Card 3 -->
+          </div>
+          <!-- /Grid -->
+        </div>
+        <!-- /max-w-7xl -->
+      </section>
+      <!-- /Featured Work -->
+
+      <!-- =====================================================
+         BEHIND THE PIXELS SECTION
+    ===================================================== -->
+      <section id="about" class="relative py-24 lg:py-32">
+        <!-- Top separator line -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" aria-hidden="true"></div>
+
+        <!-- Subtle background glow (right side) -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#B026FF]/[0.05] blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+          <!-- Section Header -->
+          <div class="mb-14">
+            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-3">Behind the Pixels</h2>
+            <div class="h-[3px] w-12 rounded-full bg-[#B026FF]"></div>
+          </div>
+
+          <!-- 2-Column Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <!-- ── LEFT: 3D Flip Card ─────────────────── -->
+            <div class="w-4/5 mx-auto lg:w-3/4 cursor-pointer" style="perspective: 1000px" onclick="this.firstElementChild.classList.toggle('[transform:rotateY(180deg)]')">
+              <!-- Inner: animasi flip -->
+              <div class="relative w-full aspect-square transition-transform duration-700 [transform-style:preserve-3d]">
+                <!-- ── SISI DEPAN: Foto ── -->
+                <div class="absolute inset-0 [backface-visibility:hidden]">
+                  <img src="assets/images/myselfAtAlJabbar.jpeg" alt="Ahmad Dzaki" class="w-full h-full object-cover rounded-2xl border-4 border-purple-500/60 shadow-[0_0_20px_rgba(168,85,247,0.3)]" />
+                  <!-- Overlay "TAP ME" hint -->
+                  <div class="absolute inset-0 flex items-center justify-center rounded-2xl pointer-events-none">
+                    <span class="text-white/40 text-2xl font-black tracking-widest animate-pulse select-none">TAP ME</span>
+                  </div>
+                </div>
+                <!-- /Sisi Depan -->
+
+                <!-- ── SISI BELAKANG: Bio ── -->
+                <div class="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] bg-[#1a1a1a] rounded-2xl border-2 border-purple-500 p-6 flex items-center justify-center text-center">
+                  <p class="text-[#909090] text-sm leading-[1.9]">
+                    Saya adalah mahasiswa <span class="text-white font-semibold">Teknik Informatika semester&nbsp;6</span> di <span class="text-white font-semibold">Universitas Pasundan</span>. Keahlian utama saya terletak pada perpotongan
+                    antara desain antarmuka dan pengembangan teknis. Saya berpengalaman merancang mekanik game (khususnya dengan metode <em class="not-italic text-purple-400">Digital Game Based Learning</em>), mengevaluasi UI/UX menggunakan
+                    kerangka <em class="not-italic text-purple-400">User Experience Questionnaire</em> (seperti pada riset evaluasi aplikasi <em class="not-italic text-white">Teuida</em>), serta membangun perangkat lunak mobile dan web
+                    tangguh menggunakan <em class="not-italic text-purple-400">Flutter</em> dan <em class="not-italic text-purple-400">Laravel</em>.
+                  </p>
+                </div>
+                <!-- /Sisi Belakang -->
+              </div>
+            </div>
+            <!-- /Left -->
+
+            <!-- ── RIGHT: Experience Timeline ─────────────────── -->
+            <div class="flex flex-col">
+              <!-- Timeline wrapper: left border line -->
+              <ol class="relative border-l border-white/[0.08] space-y-0 pl-0">
+                <!-- ── Item 1: Global Game Jam ── -->
+                <li class="timeline-item group relative flex gap-6 pb-12 pl-8">
+                  <!-- Dot -->
+                  <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#B026FF] ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
+
+                  <div>
+                    <!-- Year tag -->
+                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#B026FF] bg-[#B026FF]/10 border border-[#B026FF]/20 px-2.5 py-0.5 rounded-full"> 2026 </span>
+                    <h3 class="text-white font-bold text-base leading-snug mb-1.5">Global Game Jam Bandung 2026</h3>
+                    <p class="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#B026FF] mb-0">Game Programmer &amp; Designer</p>
+                  </div>
+                </li>
+
+                <!-- ── Item 2: UI/UX Academic Research ── -->
+                <li class="timeline-item group relative flex gap-6 pb-12 pl-8">
+                  <!-- Dot -->
+                  <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#a8cc44] ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
+
+                  <div>
+                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#a8cc44] bg-[#a8cc44]/10 border border-[#a8cc44]/20 px-2.5 py-0.5 rounded-full"> Academic </span>
+                    <h3 class="text-white font-bold text-base leading-snug mb-2">UI/UX Academic Research</h3>
+                    <p class="text-[#686868] text-sm leading-[1.7]">
+                      Evaluasi Aplikasi Pembelajaran Bahasa Jepang menggunakan metode
+                      <em class="not-italic text-[#909090]">User Experience Questionnaire (UEQ)</em>.
+                    </p>
+                  </div>
+                </li>
+
+                <!-- ── Item 3: 2D Asset & Audio ── -->
+                <li class="timeline-item group relative flex gap-6 pb-0 pl-8">
+                  <!-- Dot -->
+                  <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-white/30 ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
+
+                  <div>
+                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-neutral-500 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full"> Production </span>
+                    <h3 class="text-white font-bold text-base leading-snug mb-2">2D Asset &amp; Audio Production</h3>
+                    <p class="text-[#686868] text-sm leading-[1.7]">Desain karakter vektor dan produksi audio orisinal untuk kebutuhan game indie dan aplikasi interaktif.</p>
+                  </div>
+                </li>
+              </ol>
+              <!-- /Timeline -->
+            </div>
+            <!-- /Right -->
+          </div>
+          <!-- /2-col grid -->
+        </div>
+        <!-- /max-w-7xl -->
+      </section>
+      <!-- /Behind the Pixels -->
+
+      <!-- =====================================================
+         TECHNICAL ARSENAL SECTION
+    ===================================================== -->
+      <section id="skills" class="relative py-24 lg:py-32">
+        <!-- Top separator glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/35 to-transparent" aria-hidden="true"></div>
+
+        <!-- Left ambient glow -->
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-[#B026FF]/[0.05] blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+          <!-- Two-column split: intro left | cards right -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+            <!-- ── LEFT: Intro ── -->
+            <div class="lg:sticky lg:top-28">
+              <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Technical Arsenal</h2>
+              <div class="h-[3px] w-12 rounded-full bg-[#B026FF] mb-6"></div>
+              <p class="text-[#787878] text-[0.95rem] leading-[1.85] max-w-sm">A curated stack of tools and frameworks mastered through hands-on project experience — from shipping mobile apps to shipping game worlds.</p>
+            </div>
+
+            <!-- ── RIGHT: Skill Cards ── -->
+            <div class="flex flex-col gap-4">
+              <!-- Card: Mobile -->
+              <div id="skill-mobile" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#B026FF]/40 transition-colors duration-300 p-6">
+                <!-- Card header -->
+                <div class="flex items-center gap-3 mb-6">
+                  <!-- Icon -->
+                  <div class="w-8 h-8 rounded-lg bg-[#B026FF]/15 border border-[#B026FF]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" fill="none" />
+                      <circle cx="12" cy="18" r="1" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <h3 class="text-sm font-bold tracking-[0.15em] uppercase text-white">Mobile</h3>
+                </div>
+
+                <!-- Skill rows with percentage -->
+                <ul class="space-y-4">
+                  <!-- Flutter -->
+                  <li>
+                    <div class="flex justify-between items-center mb-1.5">
+                      <span class="text-sm text-[#c0c0c0] font-medium">Flutter</span>
+                      <span class="text-sm font-bold" style="color: #a8cc44">90%</span>
+                    </div>
+                    <div class="h-[3px] w-full rounded-full bg-white/[0.06]">
+                      <div class="h-full rounded-full bg-gradient-to-r from-[#B026FF] to-[#a8cc44]" style="width: 90%"></div>
+                    </div>
+                  </li>
+
+                  <!-- Kotlin -->
+                  <li>
+                    <div class="flex justify-between items-center mb-1.5">
+                      <span class="text-sm text-[#c0c0c0] font-medium">Kotlin</span>
+                      <span class="text-sm font-bold" style="color: #a8cc44">85%</span>
+                    </div>
+                    <div class="h-[3px] w-full rounded-full bg-white/[0.06]">
+                      <div class="h-full rounded-full bg-gradient-to-r from-[#B026FF] to-[#a8cc44]" style="width: 85%"></div>
+                    </div>
+                  </li>
+
+                  <!-- Swift -->
+                  <li>
+                    <div class="flex justify-between items-center mb-1.5">
+                      <span class="text-sm text-[#c0c0c0] font-medium">Swift</span>
+                      <span class="text-sm font-bold" style="color: #a8cc44">70%</span>
+                    </div>
+                    <div class="h-[3px] w-full rounded-full bg-white/[0.06]">
+                      <div class="h-full rounded-full bg-gradient-to-r from-[#B026FF] to-[#a8cc44]" style="width: 70%"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- /Mobile -->
+
+              <!-- Card: Game Dev -->
+              <div id="skill-gamedev" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#B026FF]/40 transition-colors duration-300 p-6">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-8 h-8 rounded-lg bg-[#B026FF]/15 border border-[#B026FF]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M11 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2v-5
+                         M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-sm font-bold tracking-[0.15em] uppercase text-white">Game Dev</h3>
+                </div>
+
+                <!-- Tags grid -->
+                <div class="flex flex-wrap gap-2.5">
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-[#B026FF]/25 text-[#B026FF] bg-[#B026FF]/08 hover:bg-[#B026FF]/20 transition-colors duration-200 cursor-default">
+                    Unity
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-[#B026FF]/25 text-[#B026FF] bg-[#B026FF]/08 hover:bg-[#B026FF]/20 transition-colors duration-200 cursor-default">
+                    C#
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    Unreal Engine
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    C++
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    GDScript
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    Godot
+                  </span>
+                </div>
+              </div>
+              <!-- /Game Dev -->
+
+              <!-- Card: Design -->
+              <div id="skill-design" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#B026FF]/40 transition-colors duration-300 p-6">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-8 h-8 rounded-lg bg-[#B026FF]/15 border border-[#B026FF]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4z
+                         M21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v7a4 4 0 008 0V5z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-sm font-bold tracking-[0.15em] uppercase text-white">Design</h3>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2.5">
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-[#a8cc44]/30 text-[#a8cc44] bg-[#a8cc44]/08 hover:bg-[#a8cc44]/18 transition-colors duration-200 cursor-default">
+                    Figma
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-[#a8cc44]/30 text-[#a8cc44] bg-[#a8cc44]/08 hover:bg-[#a8cc44]/18 transition-colors duration-200 cursor-default">
+                    Adobe XD
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    Prototyping
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    Illustrator
+                  </span>
+                  <span class="skill-tag px-3.5 py-1.5 rounded-lg text-[0.72rem] font-semibold tracking-wide border border-white/10 text-neutral-400 bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200 cursor-default">
+                    After Effects
+                  </span>
+                </div>
+              </div>
+              <!-- /Design -->
+            </div>
+            <!-- /Right: Skill Cards -->
+          </div>
+          <!-- /Two-col grid -->
+        </div>
+        <!-- /max-w-7xl -->
+      </section>
+      <!-- /Technical Arsenal -->
+    </main>
+
+    <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+    <footer id="contact" class="relative border-t border-white/[0.06] bg-[#0a0a0a]">
+      <!-- Very subtle top glow stripe -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/20 to-transparent" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <!-- Left: Copyright + stack info -->
+        <div class="text-center sm:text-left">
+          <p class="text-gray-500 text-[0.72rem] tracking-wide">
+            &copy; 2026 Ahmad Dzaki.
+            <span class="text-gray-600">Engineered for Excellence.</span>
+          </p>
+          <p class="text-gray-600 text-xs mt-1">Built with HTML &amp; Tailwind CSS.</p>
+        </div>
+
+        <!-- Right: Icon-only social links -->
+        <nav aria-label="Social links">
+          <ul class="flex items-center gap-5">
+            <!-- LinkedIn -->
+            <li>
+              <a href="https://www.linkedin.com/in/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-linkedin" aria-label="LinkedIn" class="block text-gray-400 hover:text-purple-500 transition-colors duration-300">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                  <rect x="2" y="9" width="4" height="12" rx="1" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+            </li>
+
+            <!-- GitHub -->
+            <li>
+              <a href="https://github.com/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-github" aria-label="GitHub" class="block text-gray-400 hover:text-purple-500 transition-colors duration-300">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <!-- Instagram -->
+            <li>
+              <a href="https://www.instagram.com/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-instagram" aria-label="Instagram" class="block text-gray-400 hover:text-purple-500 transition-colors duration-300">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            </li>
+
+            <!-- CV / Download -->
+            <li>
+              <a href="docs/cv.pdf" download id="footer-cv" aria-label="Download CV" class="block text-purple-500 hover:text-white transition-colors duration-300">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="12" y1="18" x2="12" y2="12" />
+                  <polyline points="9 15 12 18 15 15" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
