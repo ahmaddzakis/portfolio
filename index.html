@@ -28,8 +28,8 @@
             },
             colors: {
               brand: {
-                purple: '#B026FF',
-                magenta: '#C840EB',
+                emerald: '#10B981',
+                darkGreen: '#059669',
                 dark: '#0F0F0F',
                 surface: '#161616',
                 border: '#222222',
@@ -49,7 +49,7 @@
 
       /* Hero radial glow */
       .hero-bg-glow {
-        background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(176, 38, 255, 0.18), transparent 70%);
+        background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(16, 185, 129, 0.18), transparent 70%);
         pointer-events: none;
       }
 
@@ -85,7 +85,7 @@
         bottom: -6px;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, #b026ff, #c840eb);
+        background: linear-gradient(90deg, #10B981, #059669);
         transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         border-radius: 2px;
       }
@@ -137,8 +137,8 @@
       }
       .btn-primary:hover {
         box-shadow:
-          0 0 40px rgba(176, 38, 255, 0.65),
-          inset 0 0 20px rgba(200, 64, 235, 0.2);
+          0 0 40px rgba(16, 185, 129, 0.65),
+          inset 0 0 20px rgba(5, 150, 105, 0.2);
         transform: translateY(-3px);
       }
       .btn-primary:active {
@@ -179,14 +179,14 @@
         transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
       .skill-card:hover {
-        border-color: rgba(176, 38, 255, 0.6);
+        border-color: rgba(16, 185, 129, 0.6);
         background: #151515;
         transform: translateY(-4px);
       }
 
       /* Section separator glow enhanced */
       .section-divider {
-        background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.5), transparent);
+        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
         animation: pulse 3s ease-in-out infinite;
       }
       @keyframes pulse {
@@ -207,12 +207,12 @@
         background: #0f0f0f;
       }
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #b026ff, #a8cc44);
+        background: linear-gradient(180deg, #10B981, #a8cc44);
         border-radius: 10px;
         transition: background 0.3s ease;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #c840eb, #b8dc54);
+        background: linear-gradient(180deg, #059669, #b8dc54);
       }
 
       /* Smooth scroll behavior */
@@ -260,7 +260,7 @@
             id="btn-download-cv"
             href="docs/cv.pdf"
             download
-            class="hidden md:inline-flex btn-primary items-center gap-2 px-5 py-2 rounded-md text-[0.7rem] font-bold tracking-widest uppercase text-white bg-[#B026FF] border border-[#C840EB] hover:bg-[#C840EB] transition-colors duration-200"
+            class="hidden md:inline-flex btn-primary items-center gap-2 px-5 py-2 rounded-md text-[0.7rem] font-bold tracking-widest uppercase text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2 M7 10l5 5 5-5 M12 15V3" />
@@ -290,20 +290,25 @@
       <!-- Backdrop -->
       <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
       <!-- Slide-in Drawer -->
-      <nav id="mobile-drawer" class="absolute top-0 right-0 h-full w-72 bg-[#0F0F0F] border-l border-white/10 flex flex-col p-6 pt-20 gap-1 overflow-y-auto shadow-2xl transform translate-x-full transition-transform duration-300 ease-out">
+      <nav id="mobile-drawer" class="absolute top-0 right-0 h-full w-72 bg-[#0F0F0F] border-l border-white/10 flex flex-col p-6 pt-20 overflow-y-auto shadow-2xl transform translate-x-full transition-transform duration-300 ease-out">
         <!-- Close Button -->
         <button onclick="closeMobileMenu()" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10" aria-label="Close menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <a href="#hero"     onclick="closeMobileMenu()" class="py-3.5 px-2 text-gray-300 hover:text-white font-medium text-base border-b border-white/[0.07] transition-colors">Home</a>
-        <a href="#projects" onclick="closeMobileMenu()" class="py-3.5 px-2 text-gray-300 hover:text-white font-medium text-base border-b border-white/[0.07] transition-colors">Projects</a>
-        <a href="#about"    onclick="closeMobileMenu()" class="py-3.5 px-2 text-gray-300 hover:text-white font-medium text-base border-b border-white/[0.07] transition-colors">About</a>
-        <a href="#skills"   onclick="closeMobileMenu()" class="py-3.5 px-2 text-gray-300 hover:text-white font-medium text-base border-b border-white/[0.07] transition-colors">Skills</a>
-        <a href="#contact"  onclick="closeMobileMenu()" class="py-3.5 px-2 text-gray-300 hover:text-white font-medium text-base transition-colors">Contact</a>
-        <div class="mt-6 pt-4 border-t border-white/[0.07]">
-          <a href="docs/cv.pdf" download class="btn-primary flex items-center justify-center gap-2 px-5 py-3 rounded-md text-xs font-bold tracking-widest uppercase text-white bg-[#B026FF] border border-[#C840EB] hover:bg-[#C840EB] transition-colors duration-200">
+
+        <!-- Menu Links Container -->
+        <div class="flex flex-col gap-6 mt-8">
+          <a href="#hero"     onclick="closeMobileMenu()" class="text-lg font-medium text-gray-300 hover:text-[#10B981] hover:translate-x-2 transition-all duration-300">Home</a>
+          <a href="#projects" onclick="closeMobileMenu()" class="text-lg font-medium text-gray-300 hover:text-[#10B981] hover:translate-x-2 transition-all duration-300">Projects</a>
+          <a href="#about"    onclick="closeMobileMenu()" class="text-lg font-medium text-gray-300 hover:text-[#10B981] hover:translate-x-2 transition-all duration-300">About</a>
+          <a href="#skills"   onclick="closeMobileMenu()" class="text-lg font-medium text-gray-300 hover:text-[#10B981] hover:translate-x-2 transition-all duration-300">Skills</a>
+          <a href="#contact"  onclick="closeMobileMenu()" class="text-lg font-medium text-gray-300 hover:text-[#10B981] hover:translate-x-2 transition-all duration-300">Contact</a>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-white/[0.07]">
+          <a href="docs/cv.pdf" download class="btn-primary flex items-center justify-center gap-2 px-5 py-3 rounded-md text-xs font-bold tracking-widest uppercase text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2 M7 10l5 5 5-5 M12 15V3" />
             </svg>
@@ -328,90 +333,84 @@
           aria-hidden="true"
         ></div>
 
-        <!-- ── RIGHT: Batik Pattern (absolute, full-bleed right, staggered) ── -->
-        <div class="absolute inset-y-0 right-0 w-[55%] flex gap-2 opacity-15 pointer-events-none overflow-hidden" aria-hidden="true">
-          <!-- Kolom 1: offset 0 -->
-          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(-5%)">
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+        <!-- Motif Mega Mendung (Hero Background - Full width staggered) -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <!-- Batik Pattern (Full width, staggered) -->
+          <div class="absolute inset-0 flex gap-4 w-[150%] sm:w-[120%] lg:w-full opacity-[0.12]">
+            <!-- Kolom 1 -->
+            <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-5%)">
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+            </div>
+            <!-- Kolom 2 -->
+            <div class="flex flex-col gap-4 flex-1" style="transform: translateY(15%)">
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+            </div>
+            <!-- Kolom 3 -->
+            <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-15%)">
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+            </div>
+            <!-- Kolom 4 -->
+            <div class="flex flex-col gap-4 flex-1" style="transform: translateY(5%)">
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+            </div>
+            <!-- Kolom 5 -->
+            <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-10%)">
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+            </div>
           </div>
 
-          <!-- Kolom 2: offset -20% (turun lebih bawah) -->
-          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(15%)">
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-          </div>
-
-          <!-- Kolom 3: offset -10% -->
-          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(-15%)">
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-          </div>
-
-          <!-- Kolom 4: offset +5% -->
-          <div class="flex flex-col gap-2 flex-1" style="transform: translateY(5%)">
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-            <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-          </div>
-
-          <!-- Fade: left edge -->
-          <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0F0F0F] to-transparent pointer-events-none"></div>
-          <!-- Fade: bottom edge -->
-          <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0F0F0F] to-transparent pointer-events-none"></div>
-          <!-- Fade: top edge -->
-          <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0F0F0F] to-transparent pointer-events-none"></div>
-          <!-- Accent glow -->
-          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div class="w-80 h-80 rounded-full bg-[#B026FF]/10 blur-3xl"></div>
-          </div>
+          <!-- Fade Overlays for depth -->
+          <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0f0f0f] to-transparent"></div>
+          <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0f0f0f] to-transparent"></div>
+          <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0f0f0f] to-transparent"></div>
+          
+          <!-- Bottom Blur + Fade out (Sekitar bawah tombol) -->
+          <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/90 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 h-64 backdrop-blur-[6px]" style="mask-image: linear-gradient(to top, black 30%, transparent 100%); -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);"></div>
         </div>
-        <!-- /RIGHT -->
 
         <!-- Hero content -->
         <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10 pt-24 pb-12">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-items-center lg:justify-items-start">
             <!-- ── LEFT: Text & CTA ── -->
             <div class="relative z-10 w-full flex flex-col items-center text-center md:items-start md:text-left" data-aos="fade-up" data-aos-duration="900">
-              <!-- Availability Badge -->
-              <div id="availability-badge" class="flex items-center gap-2.5 mb-8">
-                <span class="relative flex h-2.5 w-2.5 shrink-0">
-                  <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-70"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400"></span>
-                </span>
-                <span class="text-sm font-medium tracking-wide" style="color: #a8cc44"> Available for New Opportunities </span>
-              </div>
-
-              <!-- Sub-title / Role -->
-              <p id="hero-role" class="text-[0.65rem] md:text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-5">GAME DESIGNER &bull; QA GAME &bull; MOBILE DEVELOPER</p>
+              <!-- Badge -->
+              <span class="inline-block px-4 py-1.5 text-xs font-bold tracking-widest text-[#10B981] uppercase border border-[#10B981]/30 rounded-full mb-6">GAME &bull; UI/UX &bull; MOBILE DEV</span>
 
               <!-- H1: Greeting + Name -->
-              <h1 id="hero-headline" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white mb-6">
-                Wilujeng Rawuh! <br />
-                I am <span style="color: #b026ff">Ahmad Dzaki.</span>
+              <h1 class="flex flex-col font-extrabold tracking-tight mt-4">
+                <div class="flex items-end justify-center md:justify-start mb-6">
+                  <span class="text-3xl md:text-4xl text-gray-200 font-semibold">Wilujeng Rawuh!</span>
+                  <span class="text-xl md:text-2xl text-[#10B981] drop-shadow-[0_0_8px_rgba(16,185,129,0.8)] font-medium tracking-widest mt-4 ml-4">ꦏꦸꦭ</span>
+                </div>
+                <span class="text-5xl md:text-7xl text-[#10B981] leading-[0.9] font-extrabold mb-10">Ahmad Dzaki</span>
               </h1>
 
               <!-- Description -->
-              <p id="hero-description" class="text-gray-400 text-base md:text-lg lg:text-xl w-full md:max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed">
-                Crafting engaging games and high-performance mobile apps. Combining expertise in game mechanics design, rigorous quality assurance, and robust development to deliver seamless interactive experiences.
-              </p>
+              <div class="text-lg md:text-xl text-gray-400 mt-2 mb-8 max-w-2xl font-light">
+                <p class="text-gray-300 font-medium mb-3 border-l-2 border-[#10B981] pl-4">"Nata Rupa, Nata Rasa" &mdash; <span class="italic text-gray-400 font-light">Crafting the interface, designing the experience.</span></p>
+              </div>
 
               <!-- CTA Button -->
               <a
                 id="btn-view-projects"
                 href="#projects"
-                class="btn-primary w-fit inline-flex items-center gap-3 px-7 py-3.5 rounded-md font-semibold text-sm tracking-wide text-white bg-[#B026FF] border border-[#C840EB] hover:bg-[#C840EB] transition-colors duration-200"
+                class="btn-primary w-fit inline-flex items-center gap-3 px-7 py-3.5 rounded-md font-semibold text-sm tracking-wide text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200"
               >
                 VIEW MY PROJECTS
                 <span class="text-base leading-none" aria-hidden="true">&#8594;</span>
@@ -428,14 +427,14 @@
     ===================================================== -->
       <section id="projects" class="relative py-24 lg:py-32 overflow-hidden">
         <!-- Subtle top separator glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/40 to-transparent" aria-hidden="true"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-[#10B981]/40 to-transparent" aria-hidden="true"></div>
 
         <div class="w-full max-w-7xl mx-auto px-5 md:px-10">
           <!-- Section Header -->
           <div class="mb-14" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-3">Featured Work</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-3">Selected Projects</h2>
             <!-- Accent underline -->
-            <div class="h-[3px] w-12 rounded-full bg-[#B026FF]"></div>
+            <div class="h-[3px] w-12 rounded-full bg-[#10B981]"></div>
           </div>
 
           <!-- ── GRID: 2 cards, max 2 cols ──────────────────────── -->
@@ -444,13 +443,13 @@
             <!-- ── CARD 1 : MIRAIku ──────────────── -->
             <article
               id="card-miraiku"
-              class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#B026FF]/50 hover:-translate-y-1 transition-all duration-300 ease-out"
+              class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#10B981]/50 hover:-translate-y-1 transition-all duration-300 ease-out"
               data-aos="fade-up" data-aos-delay="100"
             >
               <!-- Thumbnail: 3-phone mockup -->
               <div class="relative w-full h-64 lg:h-72 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center gap-2 overflow-hidden p-4">
                 <!-- Badge -->
-                <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#B026FF]/20 text-[#B026FF] border border-[#B026FF]/25">Mobile</span>
+                <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/25">Mobile</span>
                 <!-- Phone 1: tilted left -->
                 <img
                   src="assets/images/miraiku (1).jpeg"
@@ -480,7 +479,7 @@
               <!-- Card Body -->
               <div class="p-6 flex flex-col flex-1">
                 <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Mobile App &bull; 2026</p>
-                <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#C840EB] transition-colors duration-200">MIRAIku — Learn Japanese for Free</h3>
+                <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#059669] transition-colors duration-200">MIRAIku — Learn Japanese for Free</h3>
                 <p class="text-[#686868] text-sm leading-[1.7] flex-1">A mobile-first Japanese language learning application designed to master Hiragana, Katakana, and Kanji. Incorporates gamification elements and intuitive UI/UX to enhance user retention and interactive learning.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.penacode.miraiku" target="_blank" rel="noopener noreferrer" class="project-link mt-5 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
                   INSTALL NOW
@@ -493,7 +492,7 @@
             <!-- ── CARD 2 : SLIDER Arcade Space Shooter ──── -->
             <article
               id="card-slider"
-              class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#B026FF]/50 hover:-translate-y-1 transition-all duration-300 ease-out"
+              class="project-card group relative flex flex-col rounded-2xl overflow-hidden bg-[#141414] border border-white/[0.06] hover:border-[#10B981]/50 hover:-translate-y-1 transition-all duration-300 ease-out"
               data-aos="fade-up" data-aos-delay="200"
             >
               <!-- Thumbnail: auto-slider -->
@@ -504,13 +503,13 @@
                   <img src="assets/images/slider3.png" alt="SLIDER gameplay 3" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0" />
                 </div>
                 <!-- Badge -->
-                <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#B026FF]/20 text-[#B026FF] border border-[#B026FF]/25">Game</span>
+                <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/25">Game</span>
               </div>
 
               <!-- Card Body -->
               <div class="p-6 flex flex-col flex-1">
                 <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Arcade Game &bull; 2025</p>
-                <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#C840EB] transition-colors duration-200">SLIDER — Arcade Space Shooter</h3>
+                <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#059669] transition-colors duration-200">SLIDER — Arcade Space Shooter</h3>
                 <p class="text-[#686868] text-sm leading-[1.7] flex-1">An arcade space shooter integrating rogue-lite elements. Players pilot the Phoenix-67 spacecraft to navigate progressively challenging waves, utilizing a dynamic power-up system driven by objective-based survival mechanics.</p>
                 <a href="https://ritssss.itch.io/slider" target="_blank" rel="noopener noreferrer" class="project-link mt-5 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
                   INSTALL NOW
@@ -556,13 +555,13 @@
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" aria-hidden="true"></div>
 
         <!-- Subtle background glow (right side) -->
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#B026FF]/[0.05] blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#10B981]/[0.05] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10">
           <!-- Section Header -->
           <div class="mb-14" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-3">Behind the Pixels</h2>
-            <div class="h-[3px] w-12 rounded-full bg-[#B026FF]"></div>
+            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-3">Behind The Pixels</h2>
+            <div class="h-[3px] w-12 rounded-full bg-[#10B981]"></div>
           </div>
 
           <!-- 2-Column Grid -->
@@ -575,24 +574,24 @@
 
                 <!-- ── SISI DEPAN: Foto ── -->
                 <div class="absolute inset-0 [backface-visibility:hidden]">
-                  <img src="assets/images/myselfAtAlJabbar.jpeg" alt="Ahmad Dzaki" class="w-full h-full object-cover rounded-2xl border-4 border-purple-500/60 shadow-[0_0_20px_rgba(168,85,247,0.3)]" />
+                  <img src="assets/images/myselfAtAlJabbar.jpeg" alt="Ahmad Dzaki" class="w-full h-full object-cover rounded-2xl border-4 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
                   <!-- Overlay: Pulse click hint -->
                   <div class="absolute bottom-4 right-4 pointer-events-none flex items-center justify-center">
                     <span class="relative flex h-5 w-5">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-50"></span>
-                      <span class="relative inline-flex rounded-full h-5 w-5 bg-purple-500 opacity-80"></span>
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
+                      <span class="relative inline-flex rounded-full h-5 w-5 bg-emerald-500 opacity-80"></span>
                     </span>
                   </div>
                 </div>
                 <!-- /Sisi Depan -->
 
                 <!-- ── SISI BELAKANG: Bio ── -->
-                <div class="h-auto w-full p-6 sm:p-8 relative [transform:rotateY(180deg)] [backface-visibility:hidden] bg-[#1a1a1a] rounded-2xl border-2 border-purple-500 flex flex-col items-center justify-center text-center gap-4">
+                <div class="h-auto w-full p-6 sm:p-8 relative [transform:rotateY(180deg)] [backface-visibility:hidden] bg-[#1a1a1a] rounded-2xl border-2 border-emerald-500 flex flex-col items-center justify-center text-center gap-4">
                   <p class="text-gray-200 text-sm leading-relaxed">
-                    I am a 6th-semester <span class="text-purple-400 font-semibold">Informatics Engineering</span> student at <span class="text-purple-400 font-semibold">Universitas Pasundan</span>.
+                    I'm a 6th-semester <span class="text-emerald-400 font-semibold">Informatics Engineering</span> student at <span class="text-emerald-400 font-semibold">Pasundan University</span>.
                   </p>
                   <p class="text-gray-200 text-sm leading-relaxed">
-                    My expertise lies at the intersection of <span class="text-purple-400 font-semibold">UI/UX</span> design and technical development. I have experience designing game mechanics, evaluating user experiences using the <em class="not-italic text-purple-300">User Experience Questionnaire (UEQ)</em> (such as my research on the <span class="text-white font-semibold">Teuida</span> app), and building robust mobile software using <span class="text-purple-400 font-semibold">Flutter</span>.
+                    My expertise lies at the intersection of <span class="text-emerald-400 font-semibold">UI/UX</span> design and technical development. I have experience designing game mechanics, evaluating user experiences using the <em class="not-italic text-emerald-300">User Experience Questionnaire (UEQ)</em> (such as my research on the <span class="text-white font-semibold">Kana</span> app), and building robust mobile software using <span class="text-emerald-400 font-semibold">Flutter</span>.
                   </p>
                 </div>
                 <!-- /Sisi Belakang -->
@@ -609,9 +608,9 @@
                 <!-- ── Item 1: Game Jam ── -->
                 <li class="timeline-item group relative flex gap-6 pb-12 pl-8">
                   <!-- Dot -->
-                  <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#B026FF] ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
+                  <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#10B981] ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
                   <div>
-                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#B026FF] bg-[#B026FF]/10 border border-[#B026FF]/20 px-2.5 py-0.5 rounded-full"> 2025 </span>
+                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 px-2.5 py-0.5 rounded-full"> 2025 </span>
                     <h3 class="text-white font-bold text-base leading-snug mb-2">Game Jam + 2025/26</h3>
                     <p class="text-[#686868] text-sm leading-[1.7]">Participated as a <em class="not-italic text-[#909090]">Game Designer</em>, designing game mechanics and enemies for the <em class="not-italic text-[#909090]">SLIDER</em> game.</p>
                   </div>
@@ -649,20 +648,20 @@
 
           <!-- 3 Contact Boxes -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <a href="mailto:ahmaddzaki141@gmail.com" class="flex items-center justify-center gap-3 p-4 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-purple-500 transition-all text-gray-300 group hover:scale-[1.02] transition-transform">
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <a href="mailto:ahmaddzaki141@gmail.com" class="flex items-center justify-center gap-3 p-4 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-emerald-500 transition-all text-gray-300 group hover:scale-[1.02] transition-transform">
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-emerald-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span class="group-hover:text-white transition-colors">ahmaddzaki141@gmail.com</span>
             </a>
             
-            <a href="https://github.com/ahmaddzakis" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-purple-500 transition-all text-gray-300 group">
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <a href="https://github.com/ahmaddzakis" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-emerald-500 transition-all text-gray-300 group">
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-emerald-400 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
               <span class="group-hover:text-white transition-colors">GitHub</span>
             </a>
             
-            <a href="https://linkedin.com/in/ahmaddzakis" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-purple-500 transition-all text-gray-300 group">
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.924 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://linkedin.com/in/ahmaddzakis" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-emerald-500 transition-all text-gray-300 group">
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.924 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               <span class="group-hover:text-white transition-colors">LinkedIn</span>
             </a>
           </div>
@@ -676,10 +675,10 @@
     ===================================================== -->
       <section id="skills" class="relative py-24 lg:py-32 overflow-hidden">
         <!-- Top separator glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/35 to-transparent" aria-hidden="true"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-[#10B981]/35 to-transparent" aria-hidden="true"></div>
 
         <!-- Left ambient glow -->
-        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-[#B026FF]/[0.05] blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-[#10B981]/[0.05] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
         <!-- Motif Mega Mendung (Section Background) -->
         <div class="absolute inset-0 z-0 overflow-hidden opacity-10 pointer-events-none" aria-hidden="true">
@@ -737,20 +736,20 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
             <!-- ── LEFT: Intro ── -->
             <div class="flex flex-col" data-aos="fade-up">
-              <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Technical Arsenal</h2>
-              <div class="h-[3px] w-12 rounded-full bg-[#B026FF] mb-6"></div>
+              <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Crafting Tools</h2>
+              <div class="h-[3px] w-12 rounded-full bg-[#10B981] mb-6"></div>
               <p class="text-[#787878] text-[0.95rem] leading-[1.85] max-w-sm">A curated stack of tools and frameworks mastered through hands-on project experience — from shipping mobile apps to shipping game worlds.</p>
             </div>
 
             <!-- ── RIGHT: Skill Cards ── -->
             <div class="flex flex-col gap-4">
               <!-- Card: Software & Mobile -->
-              <div id="skill-software-mobile" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#B026FF]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="100">
+              <div id="skill-software-mobile" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#10B981]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="100">
                 <!-- Card header -->
                 <div class="flex items-center gap-3 mb-6">
                   <!-- Icon -->
-                  <div class="w-8 h-8 rounded-lg bg-[#B026FF]/15 border border-[#B026FF]/20 flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <div class="w-8 h-8 rounded-lg bg-[#10B981]/15 border border-[#10B981]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" fill="none" />
                       <circle cx="12" cy="18" r="1" fill="currentColor" />
                     </svg>
@@ -760,43 +759,31 @@
 
                 <!-- Tags grid -->
                 <div class="flex flex-wrap gap-3">
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
                     Flutter
                   </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <img src="https://cdn.simpleicons.org/laravel/white" class="w-4 h-4 object-contain" alt="Laravel" />
                     Laravel
                   </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
-                    Tailwind
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
-                    <span class="text-base leading-none">☕</span>
-                    Java
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/github/white" class="w-4 h-4 object-contain" alt="GitHub" />
-                    GitHub
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
+                    <img src="https://cdn.simpleicons.org/mysql/white" class="w-4 h-4 object-contain" alt="MySQL" />
+                    MySQL
                   </span>
                 </div>
               </div>
               <!-- /Software & Mobile -->
 
               <!-- Card: Game Development -->
-              <div id="skill-gamedev" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#B026FF]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="200">
+              <div id="skill-game-dev" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#10B981]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="200">
                 <!-- Card header -->
                 <div class="flex items-center gap-3 mb-6">
                   <!-- Icon -->
-                  <div class="w-8 h-8 rounded-lg bg-[#B026FF]/15 border border-[#B026FF]/20 flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M11 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2v-5
-                         M14 4h6m0 0v6m0-6L10 14"
-                      />
+                  <div class="w-8 h-8 rounded-lg bg-[#10B981]/15 border border-[#10B981]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="6" width="20" height="12" rx="3" />
+                      <path d="M6 12h4M8 10v4M15 13h.01M18 11h.01" />
                     </svg>
                   </div>
                   <h3 class="text-sm font-bold tracking-[0.15em] uppercase text-white">GAME DEVELOPMENT</h3>
@@ -804,19 +791,19 @@
 
                 <!-- Tags grid -->
                 <div class="flex flex-wrap gap-3">
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="11" r=".5" fill="currentColor" stroke="none"/><circle cx="18" cy="13" r=".5" fill="currentColor" stroke="none"/></svg>
                     Game Design
                   </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <img src="https://cdn.simpleicons.org/aseprite/white" class="w-4 h-4 object-contain" alt="Aseprite" />
                     Aseprite
                   </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <img src="https://cdn.simpleicons.org/inkscape/white" class="w-4 h-4 object-contain" alt="Inkscape" />
                     Inkscape
                   </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <img src="https://cdn.simpleicons.org/lmms/white" class="w-4 h-4 object-contain" alt="LMMS" />
                     LMMS
                   </span>
@@ -825,18 +812,15 @@
               <!-- /Game Development -->
 
               <!-- Card: UI/UX -->
-              <div id="skill-design" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#B026FF]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="300">
+              <div id="skill-design" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#10B981]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="300">
                 <!-- Card header -->
                 <div class="flex items-center gap-3 mb-6">
                   <!-- Icon -->
-                  <div class="w-8 h-8 rounded-lg bg-[#B026FF]/15 border border-[#B026FF]/20 flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4z
-                         M21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v7a4 4 0 008 0V5z"
-                      />
+                  <div class="w-8 h-8 rounded-lg bg-[#10B981]/15 border border-[#10B981]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <line x1="3" y1="9" x2="21" y2="9" />
+                      <line x1="9" y1="21" x2="9" y2="9" />
                     </svg>
                   </div>
                   <h3 class="text-sm font-bold tracking-[0.15em] uppercase text-white">UI/UX</h3>
@@ -844,12 +828,14 @@
 
                 <!-- Tags grid -->
                 <div class="flex flex-wrap gap-3">
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
                     <img src="https://cdn.simpleicons.org/figma/white" class="w-4 h-4 object-contain" alt="Figma" />
                     Figma
                   </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all cursor-default">
-                    <span class="text-base font-bold italic leading-none text-[#00C4CC]">C</span>
+                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="w-4 h-4 shrink-0">
+                      <path fill="#00C4CC" d="M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0zm0 798.15c-158.04 0-286.15-128.11-286.15-286.15S353.96 225.85 512 225.85c70.66 0 135.25 25.5 185.34 67.75l-71.07 90.41c-31.54-22.38-70.62-35.84-114.27-35.84-105.15 0-190.4 85.25-190.4 190.4s85.25 190.4 190.4 190.4c55.33 0 105.02-23.77 140.06-61.64l83.67 80.66C682.02 731.42 601.4 798.15 512 798.15z"/>
+                    </svg>
                     Canva
                   </span>
                 </div>
@@ -869,15 +855,15 @@
     ===================================================== -->
       <section id="contact" class="relative py-24 lg:py-32 overflow-hidden">
         <!-- Top separator glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/20 to-transparent" aria-hidden="true"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-[#10B981]/20 to-transparent" aria-hidden="true"></div>
 
         <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
             <!-- ── LEFT: Text & Info ── -->
             <div data-aos="fade-right">
-              <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Get In Touch</h2>
-              <div class="h-[3px] w-12 rounded-full bg-[#B026FF] mb-6"></div>
+              <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Start a Conversation</h2>
+              <div class="h-[3px] w-12 rounded-full bg-[#10B981] mb-6"></div>
               <p class="text-[#787878] text-[0.95rem] leading-[1.85] w-full md:max-w-md mb-10">
                 Whether you have a question, a project idea, or just want to say hi, my inbox is always open. Let's build something amazing together!
               </p>
@@ -886,7 +872,7 @@
                 <!-- Location -->
                 <div class="flex items-center gap-4 text-gray-300">
                   <div class="w-10 h-10 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center shrink-0">
-                    <svg class="w-5 h-5 text-[#B026FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg class="w-5 h-5 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -899,7 +885,7 @@
 
                 <!-- Direct Email Button -->
                 <div class="mt-4">
-                  <a href="mailto:ahmaddzaki141@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent border border-[#B026FF] text-[#B026FF] font-medium text-sm hover:bg-[#B026FF] hover:text-white transition-all duration-300">
+                  <a href="mailto:ahmaddzaki141@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent border border-[#10B981] text-[#10B981] font-medium text-sm hover:bg-[#10B981] hover:text-white transition-all duration-300">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -917,26 +903,26 @@
                 <div class="flex flex-col gap-2">
                   <label for="name" class="text-sm font-medium text-gray-300">Your Name</label>
                   <input type="text" id="name" name="name" required placeholder="Mas John Doe" 
-                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#B026FF] focus:bg-gray-800 transition-colors">
+                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#10B981] focus:bg-gray-800 transition-colors">
                 </div>
 
                 <!-- Email Input -->
                 <div class="flex flex-col gap-2">
                   <label for="email" class="text-sm font-medium text-gray-300">Your Email</label>
                   <input type="email" id="email" name="email" required placeholder="masjohn@example.com" 
-                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#B026FF] focus:bg-gray-800 transition-colors">
+                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#10B981] focus:bg-gray-800 transition-colors">
                 </div>
 
                 <!-- Message Input -->
                 <div class="flex flex-col gap-2">
                   <label for="message" class="text-sm font-medium text-gray-300">Message</label>
                   <textarea id="message" name="message" rows="4" required placeholder="How can I help you?" 
-                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#B026FF] focus:bg-gray-800 transition-colors resize-none"></textarea>
+                    class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#10B981] focus:bg-gray-800 transition-colors resize-none"></textarea>
                 </div>
 
                 <!-- Submit Button -->
                 <button type="submit" 
-                  class="mt-2 w-full py-3.5 rounded-lg bg-[#B026FF] hover:bg-[#9d22e6] text-white font-bold text-sm tracking-wide transition-colors flex items-center justify-center gap-2">
+                  class="mt-2 w-full py-3.5 rounded-lg bg-[#10B981] hover:bg-[#059669] text-white font-bold text-sm tracking-wide transition-colors flex items-center justify-center gap-2">
                   <span>Send Message</span>
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -959,7 +945,7 @@
   ===================================================== -->
     <footer id="site-footer" class="relative border-t border-white/[0.06] bg-[#0a0a0a] overflow-hidden">
       <!-- Very subtle top glow stripe -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-px bg-gradient-to-r from-transparent via-[#B026FF]/20 to-transparent" aria-hidden="true"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-px bg-gradient-to-r from-transparent via-[#10B981]/20 to-transparent" aria-hidden="true"></div>
 
       <div class="w-full max-w-7xl mx-auto px-5 md:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <!-- Left: Copyright + stack info -->
@@ -976,7 +962,7 @@
           <ul class="flex items-center gap-5">
             <!-- LinkedIn -->
             <li>
-              <a href="https://www.linkedin.com/in/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-linkedin" aria-label="LinkedIn" class="block text-gray-400 hover:text-purple-500 transition-colors duration-300">
+              <a href="https://www.linkedin.com/in/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-linkedin" aria-label="LinkedIn" class="block text-gray-400 hover:text-emerald-500 transition-colors duration-300">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
                   <rect x="2" y="9" width="4" height="12" rx="1" />
@@ -987,7 +973,7 @@
 
             <!-- GitHub -->
             <li>
-              <a href="https://github.com/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-github" aria-label="GitHub" class="block text-gray-400 hover:text-purple-500 transition-colors duration-300">
+              <a href="https://github.com/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-github" aria-label="GitHub" class="block text-gray-400 hover:text-emerald-500 transition-colors duration-300">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
@@ -1000,7 +986,7 @@
 
             <!-- Instagram -->
             <li>
-              <a href="https://www.instagram.com/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-instagram" aria-label="Instagram" class="block text-gray-400 hover:text-purple-500 transition-colors duration-300">
+              <a href="https://www.instagram.com/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-instagram" aria-label="Instagram" class="block text-gray-400 hover:text-emerald-500 transition-colors duration-300">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <circle cx="12" cy="12" r="4" />
@@ -1011,7 +997,7 @@
 
             <!-- CV / Download -->
             <li>
-              <a href="docs/cv.pdf" download id="footer-cv" aria-label="Download CV" class="block text-purple-500 hover:text-white transition-colors duration-300">
+              <a href="docs/cv.pdf" download id="footer-cv" aria-label="Download CV" class="block text-emerald-500 hover:text-white transition-colors duration-300">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                   <polyline points="14 2 14 8 20 8" />
