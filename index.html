@@ -1,11 +1,21 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ahmad Dzaki's Portfolio" />
+    <meta name="description" content="Ahmad Dzaki — UI/UX Design, Flutter Development, dan Game Design. Project MIRAIku dan SLIDER is in here." />
     <title>Ahmad Dzaki's Portfolio</title>
-    <link rel="icon" type="image/png" href="assets/images/ADLogoz.png">
+    <link rel="icon" type="image/png" href="assets/images/ADreal-removebg-preview.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-904BM3ZMV0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-904BM3ZMV0');
+    </script>
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,184 +50,7 @@
       };
     </script>
 
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #0f0f0f;
-        color: #ffffff;
-      }
-
-      /* Hero radial glow */
-      .hero-bg-glow {
-        background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(16, 185, 129, 0.18), transparent 70%);
-        pointer-events: none;
-      }
-
-      /* Navbar smooth animations */
-      #navbar {
-        animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Nav link hover underline - enhanced */
-      .nav-link {
-        position: relative;
-        color: #a0a0a0;
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        transition: color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        font-weight: 500;
-      }
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -6px;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #10B981, #059669);
-        transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        border-radius: 2px;
-      }
-      .nav-link:hover {
-        color: #ffffff;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      /* Badge pulse dot - enhanced */
-      @keyframes pulse-dot {
-        0%,
-        100% {
-          opacity: 1;
-          transform: scale(1);
-          box-shadow: 0 0 0 0 rgba(168, 204, 68, 0.7);
-        }
-        50% {
-          opacity: 0.6;
-          transform: scale(1.4);
-        }
-      }
-      .pulse-dot {
-        animation: pulse-dot 2.5s ease-in-out infinite;
-      }
-
-      /* CTA hover glow + lift - enhanced */
-      .btn-primary {
-        transition:
-          box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-          background-color 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-      .btn-primary::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
-      }
-      .btn-primary:hover::before {
-        left: 100%;
-      }
-      .btn-primary:hover {
-        box-shadow:
-          0 0 40px rgba(16, 185, 129, 0.65),
-          inset 0 0 20px rgba(5, 150, 105, 0.2);
-        transform: translateY(-3px);
-      }
-      .btn-primary:active {
-        transform: translateY(-1px);
-      }
-
-      /* Fade-in animation for elements */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .fade-in-up {
-        animation: fadeInUp 0.8s ease-out;
-      }
-
-      /* Project card hover effect */
-      .project-card {
-        animation: fadeInUp 0.8s ease-out backwards;
-      }
-      .project-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .project-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .project-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-
-      /* Skill card smooth hover */
-      .skill-card {
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-      .skill-card:hover {
-        border-color: rgba(16, 185, 129, 0.6);
-        background: #151515;
-        transform: translateY(-4px);
-      }
-
-      /* Section separator glow enhanced */
-      .section-divider {
-        background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
-        animation: pulse 3s ease-in-out infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.5;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-
-
-
-      /* Smooth scroll behavior */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Link transitions */
-      a {
-        transition:
-          color 0.3s ease,
-          opacity 0.3s ease;
-      }
-
-      /* Timeline dot interaction */
-      .timeline-item span {
-        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body class="antialiased overflow-x-hidden">
@@ -228,7 +61,7 @@
       <nav class="w-full max-w-7xl mx-auto px-5 md:px-10 h-16 flex items-center justify-between gap-4">
         <!-- LEFT: Brand -->
         <a href="#" id="brand-logo" class="shrink-0 hover:opacity-80 transition-opacity duration-200">
-          <img src="assets/images/ADLogoz.png" alt="Logo" class="h-9 w-auto object-contain hover:opacity-80 transition-opacity" />
+          <img src="assets/images/ADreal-removebg-preview.png" alt="Logo inisial AD dengan gaya Mega Mendung" class="h-9 w-auto object-contain hover:opacity-80 transition-opacity" />
         </a>
 
         <!-- CENTER: Nav Links (desktop only) -->
@@ -242,17 +75,12 @@
 
         <!-- RIGHT: Download CV (desktop) + Hamburger (mobile) -->
         <div class="flex items-center gap-3 shrink-0">
-          <a
-            id="btn-download-cv"
-            href="docs/cv.pdf"
-            download
-            class="hidden md:inline-flex btn-primary items-center gap-2 px-5 py-2 rounded-md text-[0.7rem] font-bold tracking-widest uppercase text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200"
-          >
+          <button class="cv-modal-trigger hidden md:inline-flex btn-primary items-center gap-2 px-5 py-2 rounded-md text-[0.7rem] font-bold tracking-widest uppercase text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2 M7 10l5 5 5-5 M12 15V3" />
             </svg>
-            Download CV
-          </a>
+            VIEW CV
+          </button>
 
           <!-- Hamburger Button (mobile only) -->
           <button
@@ -294,12 +122,12 @@
         </div>
 
         <div class="mt-10 pt-6 border-t border-white/[0.07]">
-          <a href="docs/cv.pdf" download class="btn-primary flex items-center justify-center gap-2 px-5 py-3 rounded-md text-xs font-bold tracking-widest uppercase text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200">
+          <button onclick="closeMobileMenu()" class="cv-modal-trigger w-full btn-primary flex items-center justify-center gap-2 px-5 py-3 rounded-md text-xs font-bold tracking-widest uppercase text-white bg-[#10B981] border border-[#059669] hover:bg-[#059669] transition-colors duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2 M7 10l5 5 5-5 M12 15V3" />
             </svg>
-            Download CV
-          </a>
+            VIEW CV
+          </button>
         </div>
       </nav>
     </div>
@@ -325,38 +153,38 @@
           <div class="absolute inset-0 flex gap-4 w-[150%] sm:w-[120%] lg:w-full opacity-[0.12]">
             <!-- Kolom 1 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-5%)">
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
             </div>
             <!-- Kolom 2 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(15%)">
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
             </div>
             <!-- Kolom 3 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-15%)">
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
             </div>
             <!-- Kolom 4 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(5%)">
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
             </div>
             <!-- Kolom 5 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-10%)">
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain scale-[1.15]" />
             </div>
           </div>
 
@@ -371,25 +199,25 @@
         </div>
 
         <!-- Hero content -->
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10 pt-24 pb-12">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10 pt-10 pb-20 md:pb-32">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-items-center lg:justify-items-start">
             <!-- ── LEFT: Text & CTA ── -->
             <div class="relative z-10 w-full flex flex-col items-center text-center md:items-start md:text-left" data-aos="fade-up" data-aos-duration="900">
               <!-- Badge -->
-              <span class="inline-block px-4 py-1.5 text-xs font-bold tracking-widest text-[#10B981] uppercase border border-[#10B981]/30 rounded-full mb-6">GAME &bull; UI/UX &bull; MOBILE DEV</span>
+              <span class="inline-block px-4 py-1.5 text-[0.7rem] font-bold tracking-widest text-[#10B981] uppercase border border-[#10B981]/30 rounded-full mb-5 bg-[#10B981]/5 backdrop-blur-sm">GAME &bull; UI/UX &bull; MOBILE DEV</span>
 
               <!-- H1: Greeting + Name -->
-              <h1 class="flex flex-col font-extrabold tracking-tight mt-4">
-                <div class="flex items-end justify-center md:justify-start mb-6">
-                  <span class="text-3xl md:text-4xl text-gray-200 font-semibold">Wilujeng Rawuh!</span>
-                  <span class="text-xl md:text-2xl text-[#10B981] drop-shadow-[0_0_8px_rgba(16,185,129,0.8)] font-medium tracking-widest mt-4 ml-4">ꦏꦸꦭ</span>
+              <h1 class="flex flex-col font-extrabold tracking-tight mt-2">
+                <div class="flex items-end justify-center md:justify-start mb-3">
+                  <span class="text-3xl md:text-4xl text-gray-100 font-semibold tracking-tight">Wilujeng Rawuh!</span>
+                  <span class="text-xl md:text-2xl text-[#10B981] drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] font-medium tracking-widest ml-4 mb-0.5 opacity-90">ꦏꦸꦭ</span>
                 </div>
-                <span class="text-5xl md:text-7xl text-[#10B981] leading-[0.9] font-extrabold mb-10">Ahmad Dzaki</span>
+                <span class="text-5xl md:text-7xl lg:text-[5rem] text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#34d399] leading-[1.1] font-extrabold mb-8 drop-shadow-sm">Ahmad Dzaki</span>
               </h1>
 
               <!-- Description -->
-              <div class="text-lg md:text-xl text-gray-400 mt-2 mb-8 max-w-2xl font-light">
-                <p class="text-gray-300 font-medium mb-3 border-l-2 border-[#10B981] pl-4">"Nata Rupa, Nata Rasa" &mdash; <span class="italic text-gray-400 font-light">Crafting the interface, designing the experience.</span></p>
+              <div class="text-base md:text-lg text-gray-400 mt-2 mb-8 max-w-2xl font-light">
+                <p class="text-gray-300 font-medium border-l-2 border-[#10B981] pl-4 py-1">"Nata Rupa, Nata Rasa" &mdash; <span class="italic text-gray-400 font-light">Crafting the interface, designing the experience.</span></p>
               </div>
 
               <!-- CTA Button -->
@@ -439,25 +267,25 @@
                 <!-- Phone 1: tilted left -->
                 <img
                   src="assets/images/miraiku (1).jpeg"
-                  alt="MIRAIku screen 1"
+                  alt="Tangkapan layar antarmuka aplikasi seluler MIRAiku"
                   class="h-[90%] w-auto object-contain rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.5)] border border-gray-600 transform -rotate-6"
                 />
                 <!-- Phone 2: center, raised -->
                 <img
                   src="assets/images/miraiku (2).jpeg"
-                  alt="MIRAIku screen 2"
+                  alt="Tangkapan layar antarmuka aplikasi seluler MIRAiku"
                   class="h-[90%] w-auto object-contain rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.5)] border border-gray-600 z-10 scale-105"
                 />
                 <!-- Phone 3: tilted right -->
                 <img
                   src="assets/images/miraiku (3).jpeg"
-                  alt="MIRAIku screen 3"
+                  alt="Tangkapan layar antarmuka aplikasi seluler MIRAiku"
                   class="h-[90%] w-auto object-contain rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.5)] border border-gray-600 transform rotate-6"
                 />
                 <!-- Phone 4: far right, more tilt -->
                 <img
                   src="assets/images/miraiku (4).jpeg"
-                  alt="MIRAIku screen 4"
+                  alt="Tangkapan layar antarmuka aplikasi seluler MIRAiku"
                   class="h-[90%] w-auto object-contain rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.5)] border border-gray-600 transform rotate-12"
                 />
               </div>
@@ -467,6 +295,10 @@
                 <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Mobile App &bull; 2026</p>
                 <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#059669] transition-colors duration-200">MIRAIku — Learn Japanese for Free</h3>
                 <p class="text-[#686868] text-sm leading-[1.7] flex-1">A mobile-first Japanese language learning application designed to master Hiragana, Katakana, and Kanji. Incorporates gamification elements and intuitive UI/UX to enhance user retention and interactive learning.</p>
+                <div class="flex flex-wrap gap-2 mt-4 mb-2">
+                  <span class="px-2.5 py-1 text-xs font-semibold text-[#10B981] bg-[#10B981]/10 rounded-md border border-[#10B981]/20 tracking-wide">Flutter</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold text-[#10B981] bg-[#10B981]/10 rounded-md border border-[#10B981]/20 tracking-wide">Android Studio</span>
+                </div>
                 <a href="https://play.google.com/store/apps/details?id=com.penacode.miraiku" target="_blank" rel="noopener noreferrer" class="project-link mt-5 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
                   INSTALL NOW
                   <span>&#8594;</span>
@@ -484,9 +316,9 @@
               <!-- Thumbnail: auto-slider -->
               <div class="relative w-full h-64 lg:h-72 overflow-hidden rounded-t-xl bg-[#0d0d0d]">
                 <div class="relative w-full h-full" id="slider-slider">
-                  <img src="assets/images/slider1.png" alt="SLIDER gameplay 1" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-100" />
-                  <img src="assets/images/slider2.png" alt="SLIDER gameplay 2" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0" />
-                  <img src="assets/images/slider3.png" alt="SLIDER gameplay 3" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0" />
+                  <img src="assets/images/slider1.png" alt="Tangkapan layar antarmuka permainan SLIDER" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-100" />
+                  <img src="assets/images/slider2.png" alt="Tangkapan layar antarmuka permainan SLIDER" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0" />
+                  <img src="assets/images/slider3.png" alt="Tangkapan layar antarmuka permainan SLIDER" class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0" />
                 </div>
                 <!-- Badge -->
                 <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md text-[0.6rem] font-bold tracking-widest uppercase bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/25">Game</span>
@@ -497,6 +329,11 @@
                 <p class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-2">Arcade Game &bull; 2025</p>
                 <h3 class="text-lg font-bold text-white mb-3 group-hover:text-[#059669] transition-colors duration-200">SLIDER — Arcade Space Shooter</h3>
                 <p class="text-[#686868] text-sm leading-[1.7] flex-1">An arcade space shooter integrating rogue-lite elements. Players pilot the Phoenix-67 spacecraft to navigate progressively challenging waves, utilizing a dynamic power-up system driven by objective-based survival mechanics.</p>
+                <div class="flex flex-wrap gap-2 mt-4 mb-2">
+                  <span class="px-2.5 py-1 text-xs font-semibold text-[#10B981] bg-[#10B981]/10 rounded-md border border-[#10B981]/20 tracking-wide">Unity</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold text-[#10B981] bg-[#10B981]/10 rounded-md border border-[#10B981]/20 tracking-wide">FL Studio</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold text-[#10B981] bg-[#10B981]/10 rounded-md border border-[#10B981]/20 tracking-wide">Figma</span>
+                </div>
                 <a href="https://ritssss.itch.io/slider" target="_blank" rel="noopener noreferrer" class="project-link mt-5 inline-flex items-center gap-2 text-[0.72rem] font-bold tracking-widest uppercase text-[#a8cc44] hover:text-white transition-colors duration-200">
                   INSTALL NOW
                   <span>&#8594;</span>
@@ -536,7 +373,7 @@
       <!-- =====================================================
          BEHIND THE PIXELS SECTION
      ===================================================== -->
-      <section id="about" class="relative py-24 lg:py-32 transition-all duration-700 ease-in-out overflow-hidden">
+       <section id="about" class="relative py-24 lg:py-32 transition-all duration-700 ease-in-out overflow-hidden">
         <!-- Top separator line -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" aria-hidden="true"></div>
 
@@ -559,8 +396,8 @@
               <div class="relative w-full aspect-square transition-transform duration-700 [transform-style:preserve-3d]">
 
                 <!-- ── SISI DEPAN: Foto ── -->
-                <div class="absolute inset-0 [backface-visibility:hidden]">
-                  <img src="assets/images/myselfAtAlJabbar.jpeg" alt="Ahmad Dzaki" class="w-full h-full object-cover rounded-2xl border-4 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
+                <div class="absolute inset-0 [backface-visibility:hidden] rounded-2xl border-4 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.3)] overflow-hidden">
+                  <img src="assets/images/image copy.png" alt="Foto profil Ahmad Dzaki" class="w-full h-full object-cover" style="object-position: center top;" />
                   <!-- Overlay: Pulse click hint -->
                   <div class="absolute bottom-4 right-4 pointer-events-none flex items-center justify-center">
                     <span class="relative flex h-5 w-5">
@@ -572,13 +409,52 @@
                 <!-- /Sisi Depan -->
 
                 <!-- ── SISI BELAKANG: Bio ── -->
-                <div class="h-auto w-full p-6 sm:p-8 relative [transform:rotateY(180deg)] [backface-visibility:hidden] bg-[#1a1a1a] rounded-2xl border-2 border-emerald-500 flex flex-col items-center justify-center text-center gap-4">
-                  <p class="text-gray-200 text-sm leading-relaxed">
-                    I'm a 6th-semester <span class="text-emerald-400 font-semibold">Informatics Engineering</span> student at <span class="text-emerald-400 font-semibold">Pasundan University</span>.
-                  </p>
-                  <p class="text-gray-200 text-sm leading-relaxed">
-                    My expertise lies at the intersection of <span class="text-emerald-400 font-semibold">UI/UX</span> design and technical development. I have experience designing game mechanics, evaluating user experiences using the <em class="not-italic text-emerald-300">User Experience Questionnaire (UEQ)</em> (such as my research on the <span class="text-white font-semibold">Kana</span> app), and building robust mobile software using <span class="text-emerald-400 font-semibold">Flutter</span>.
-                  </p>
+                <div class="absolute inset-0 w-full h-full [transform:rotateY(180deg)] [backface-visibility:hidden] bg-[#1a1a1a] rounded-2xl border-2 border-emerald-500 overflow-hidden">
+                  <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar w-full h-full">
+                    
+                    <!-- Slide 1 -->
+                    <div class="min-w-full snap-center flex flex-col justify-center px-6 text-center relative">
+                      <p class="text-gray-200 text-sm leading-relaxed mb-4">
+                        6th-semester <span class="text-emerald-400 font-semibold">Informatics Engineering</span> student at <span class="text-emerald-400 font-semibold">Pasundan University</span>, specializing in the sweet spot between intuitive <span class="text-emerald-400 font-semibold">UI/UX</span> design and robust technical execution.
+                      </p>
+                      <p class="text-gray-200 text-[0.82rem] leading-relaxed">
+                        Experienced in game design mechanics and developing seamless mobile apps with <span class="text-emerald-400 font-semibold">Flutter</span>.
+                      </p>
+                      <!-- Dots -->
+                      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+                      </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="min-w-full snap-center flex flex-col justify-center px-6 text-center relative">
+                      <p class="text-gray-200 text-[0.82rem] leading-relaxed">
+                        My passion lies in crafting <span class="text-emerald-400 font-semibold">immersive interactions</span>. I'm fascinated by the psychology behind <span class="text-white font-semibold">Digital Game-Based Learning (DGBL)</span> and <span class="text-emerald-400 font-semibold">gamification</span>. Whether I'm designing tension in <span class="text-emerald-400 font-semibold">arcade space games</span> or analyzing user satisfaction, I focus on the "why" behind every tap and click.
+                      </p>
+                      <!-- Dots -->
+                      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+                      </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="min-w-full snap-center flex flex-col justify-center px-6 text-center relative">
+                      <p class="text-gray-200 text-[0.82rem] leading-relaxed">
+                        <span class="text-emerald-400 font-semibold">Mobile development</span> empowers me to put these experiences directly into users' hands. Using frameworks like <span class="text-emerald-400 font-semibold">Flutter</span>, I bring meaningful ideas to life. My ultimate motivation? Continuously leveling up my <span class="text-emerald-400 font-semibold">technical craft</span> to achieve my dream of working as a <span class="text-white font-semibold">developer in Japan</span>.
+                      </p>
+                      <!-- Dots -->
+                      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
                 <!-- /Sisi Belakang -->
 
@@ -596,22 +472,12 @@
                   <!-- Dot -->
                   <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#10B981] ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
                   <div>
-                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 px-2.5 py-0.5 rounded-full"> 2025 </span>
+                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 px-2.5 py-0.5 rounded-full"> First Game Jam </span>
                     <h3 class="text-white font-bold text-base leading-snug mb-2">Game Jam + 2025/26</h3>
-                    <p class="text-[#686868] text-sm leading-[1.7]">Participated as a <em class="not-italic text-[#909090]">Game Designer</em>, designing game mechanics and enemies for the <em class="not-italic text-[#909090]">SLIDER</em> game.</p>
+                    <p class="text-[#686868] text-sm leading-[1.7]">Kickstarted my game development journey under rapid constraints. Acted as Game Designer for SLIDER, conceptualizing core arcade mechanics, dynamic power-ups, and enemy behaviors to establish a strong gameplay foundation.</p>
                   </div>
                 </li>
 
-                <!-- ── Item 2: UI/UX Academic Research ── -->
-                <li class="timeline-item group relative flex gap-6 pb-12 pl-8">
-                  <!-- Dot -->
-                  <span class="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#a8cc44] ring-4 ring-[#0F0F0F] group-hover:scale-125 transition-transform duration-200 shrink-0"></span>
-                  <div>
-                    <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-[#a8cc44] bg-[#a8cc44]/10 border border-[#a8cc44]/20 px-2.5 py-0.5 rounded-full"> Academic </span>
-                    <h3 class="text-white font-bold text-base leading-snug mb-2">UI/UX Academic Research</h3>
-                    <p class="text-[#686868] text-sm leading-[1.7]">Undergraduate Thesis Proposal: EVALUASI DAN PERANCANGAN ULANG USER EXPERIENCE <em class="not-italic text-[#909090]">APLIKASI KANA MENGGUNAKAN METODE UEQ</p>
-                  </div>
-                </li>
 
                 <!-- ── Item 3: MIRAIku App Production ── -->
                 <li class="timeline-item group relative flex gap-6 pb-0 pl-8">
@@ -620,7 +486,7 @@
                   <div>
                     <span class="inline-block mb-2 text-[0.58rem] font-bold tracking-[0.22em] uppercase text-neutral-500 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full"> Production </span>
                     <h3 class="text-white font-bold text-base leading-snug mb-2">MIRAIku App Production</h3>
-                    <p class="text-[#686868] text-sm leading-[1.7]">Developed and produced <em class="not-italic text-[#909090]">MIRAIku</em>, a mobile-first Japanese language learning application integrating gamification elements for interactive learning.</p>
+                    <p class="text-[#686868] text-sm leading-[1.7]">Applied my expertise in UI/UX and Digital Game-Based Learning (DGBL) to mobile software. Developed a robust Japanese learning app utilizing Flutter, integrating gamification elements to maximize user retention and interactive education.</p>
                   </div>
                 </li>
 
@@ -675,38 +541,38 @@
           <div class="absolute inset-0 flex gap-4 w-[150%] sm:w-[120%] lg:w-full opacity-60">
             <!-- Kolom 1 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-5%)">
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
             </div>
             <!-- Kolom 2 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(15%)">
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
             </div>
             <!-- Kolom 3 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-15%)">
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
             </div>
             <!-- Kolom 4 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(5%)">
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
             </div>
             <!-- Kolom 5 -->
             <div class="flex flex-col gap-4 flex-1" style="transform: translateY(-10%)">
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung1.png" alt="" class="w-full h-auto object-contain" />
-              <img src="assets/images/megaMendung2.png" alt="" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung1.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
+              <img src="assets/images/megaMendung2.png" alt="Ornamen batik Mega Mendung Cirebon" class="w-full h-auto object-contain" />
             </div>
           </div>
 
@@ -745,18 +611,18 @@
 
                 <!-- Tags grid -->
                 <div class="flex flex-wrap gap-3">
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
-                    Flutter
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/laravel/white" class="w-4 h-4 object-contain" alt="Laravel" />
-                    Laravel
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/mysql/white" class="w-4 h-4 object-contain" alt="MySQL" />
-                    MySQL
-                  </span>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Flutter" data-level="Intermediate">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
+                    <span class="skill-text">Flutter</span>
+                  </button>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Laravel" data-level="Beginner">
+                    <img src="https://cdn.simpleicons.org/laravel/white" class="w-4 h-4 object-contain shrink-0" alt="Laravel" />
+                    <span class="skill-text">Laravel</span>
+                  </button>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="MySQL" data-level="Intermediate">
+                    <img src="https://cdn.simpleicons.org/mysql/white" class="w-4 h-4 object-contain shrink-0" alt="MySQL" />
+                    <span class="skill-text">MySQL</span>
+                  </button>
                 </div>
               </div>
               <!-- /Software & Mobile -->
@@ -777,22 +643,22 @@
 
                 <!-- Tags grid -->
                 <div class="flex flex-wrap gap-3">
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Game Design" data-level="Advance">
                     <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="11" r=".5" fill="currentColor" stroke="none"/><circle cx="18" cy="13" r=".5" fill="currentColor" stroke="none"/></svg>
-                    Game Design
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/aseprite/white" class="w-4 h-4 object-contain" alt="Aseprite" />
-                    Aseprite
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/inkscape/white" class="w-4 h-4 object-contain" alt="Inkscape" />
-                    Inkscape
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/lmms/white" class="w-4 h-4 object-contain" alt="LMMS" />
-                    LMMS
-                  </span>
+                    <span class="skill-text">Game Design</span>
+                  </button>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Aseprite" data-level="Intermediate">
+                    <img src="https://cdn.simpleicons.org/aseprite/white" class="w-4 h-4 object-contain shrink-0" alt="Aseprite" />
+                    <span class="skill-text">Aseprite</span>
+                  </button>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Inkscape" data-level="Advance">
+                    <img src="https://cdn.simpleicons.org/inkscape/white" class="w-4 h-4 object-contain shrink-0" alt="Inkscape" />
+                    <span class="skill-text">Inkscape</span>
+                  </button>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="LMMS" data-level="Beginner">
+                    <img src="https://cdn.simpleicons.org/lmms/white" class="w-4 h-4 object-contain shrink-0" alt="LMMS" />
+                    <span class="skill-text">LMMS</span>
+                  </button>
                 </div>
               </div>
               <!-- /Game Development -->
@@ -814,25 +680,96 @@
 
                 <!-- Tags grid -->
                 <div class="flex flex-wrap gap-3">
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
-                    <img src="https://cdn.simpleicons.org/figma/white" class="w-4 h-4 object-contain" alt="Figma" />
-                    Figma
-                  </span>
-                  <span class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-default">
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Figma" data-level="Advance">
+                    <img src="https://cdn.simpleicons.org/figma/white" class="w-4 h-4 object-contain shrink-0" alt="Figma" />
+                    <span class="skill-text">Figma</span>
+                  </button>
+                  <button class="skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer" data-name="Canva" data-level="Advance">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="w-4 h-4 shrink-0">
                       <path fill="#00C4CC" d="M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0zm0 798.15c-158.04 0-286.15-128.11-286.15-286.15S353.96 225.85 512 225.85c70.66 0 135.25 25.5 185.34 67.75l-71.07 90.41c-31.54-22.38-70.62-35.84-114.27-35.84-105.15 0-190.4 85.25-190.4 190.4s85.25 190.4 190.4 190.4c55.33 0 105.02-23.77 140.06-61.64l83.67 80.66C682.02 731.42 601.4 798.15 512 798.15z"/>
                     </svg>
-                    Canva
-                  </span>
+                    <span class="skill-text">Canva</span>
+                  </button>
                 </div>
               </div>
               <!-- /UI/UX & Research -->
+
+              <!-- Card: Soft Skills -->
+              <div id="skill-soft-skills" class="skill-card rounded-xl border border-white/[0.08] bg-[#141414] hover:border-[#10B981]/40 transition-colors duration-300 p-6" data-aos="fade-up" data-aos-delay="400">
+                <!-- Card header -->
+                <div class="flex items-center gap-3 mb-6">
+                  <!-- Icon -->
+                  <div class="w-8 h-8 rounded-lg bg-[#10B981]/15 border border-[#10B981]/20 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-sm font-bold tracking-[0.15em] uppercase text-white">SOFT SKILLS</h3>
+                </div>
+
+                <!-- Tags grid -->
+                <div class="flex flex-wrap gap-3">
+                  <div class="soft-skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-default">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span class="skill-text">Teamwork</span>
+                  </div>
+                  <div class="soft-skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-default">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <span class="skill-text">Communication</span>
+                  </div>
+                  <div class="soft-skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-default">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span class="skill-text">Problem Solving</span>
+                  </div>
+                  <div class="soft-skill-badge flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-gray-700 bg-gray-800/50 text-gray-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 cursor-default">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+                    <span class="skill-text">Adaptability</span>
+                  </div>
+                </div>
+              </div>
+              <!-- /Soft Skills -->
             </div>
             <!-- /Right: Skill Cards -->
           </div>
           <!-- /Two-col grid -->
         </div>
         <!-- /max-w-7xl -->
+
+        <script>
+          document.querySelectorAll('.skill-badge').forEach(badge => {
+            badge.addEventListener('click', function(e) {
+              e.preventDefault();
+              const textEl = this.querySelector('.skill-text');
+              const currentText = textEl.innerText;
+              const skillName = this.getAttribute('data-name');
+              const skillLevel = this.getAttribute('data-level');
+
+              // Reset animation untuk me-trigger ulang
+              textEl.classList.remove('animate-pop-text');
+              void textEl.offsetWidth; // force reflow
+              textEl.classList.add('animate-pop-text');
+
+              // Toggle logika
+              if (currentText === skillName) {
+                textEl.innerText = skillLevel;
+                // Atur warna
+                textEl.classList.remove('text-blue-400', 'text-yellow-400', 'text-red-400');
+                const level = skillLevel.toLowerCase();
+                if (level.includes('beginner')) {
+                  textEl.classList.add('text-blue-400');
+                } else if (level.includes('intermediate')) {
+                  textEl.classList.add('text-yellow-400');
+                } else if (level.includes('advance')) {
+                  textEl.classList.add('text-red-400');
+                }
+              } else {
+                textEl.innerText = skillName;
+                // Reset warna
+                textEl.classList.remove('text-blue-400', 'text-yellow-400', 'text-red-400');
+              }
+            });
+          });
+        </script>
       </section>
       <!-- /Technical Arsenal -->
 
@@ -902,7 +839,7 @@
                 <!-- Message Input -->
                 <div class="flex flex-col gap-2">
                   <label for="message" class="text-sm font-medium text-gray-300">Message</label>
-                  <textarea id="message" name="message" rows="4" required placeholder="How can I help you?" 
+                  <textarea id="message" name="message" rows="4" required placeholder="Tell me briefly about your project or the service you need.." 
                     class="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#10B981] focus:bg-gray-800 transition-colors resize-none"></textarea>
                 </div>
 
@@ -940,7 +877,7 @@
             &copy; 2026 Ahmad Dzaki.
             <span class="text-gray-600">Engineered for Excellence.</span>
           </p>
-          <p class="text-gray-600 text-xs mt-1">Built with HTML &amp; Tailwind CSS.</p>
+          <p class="text-gray-600 text-xs mt-1">Built with HTML, JS, CSS &amp; Tailwind.</p>
         </div>
 
         <!-- Right: Icon-only social links -->
@@ -950,9 +887,7 @@
             <li>
               <a href="https://www.linkedin.com/in/ahmaddzakis/" target="_blank" rel="noopener noreferrer" id="footer-linkedin" aria-label="LinkedIn" class="block text-gray-400 hover:text-emerald-500 transition-colors duration-300">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-                  <rect x="2" y="9" width="4" height="12" rx="1" />
-                  <circle cx="4" cy="4" r="2" />
+                  <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003zM7.12 20.452H3.555V9h3.564v11.452zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm15.11 13.019h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/>
                 </svg>
               </a>
             </li>
@@ -981,16 +916,16 @@
               </a>
             </li>
 
-            <!-- CV / Download -->
+            <!-- CV / Preview -->
             <li>
-              <a href="docs/cv.pdf" download id="footer-cv" aria-label="Download CV" class="block text-emerald-500 hover:text-white transition-colors duration-300">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <button aria-label="Preview CV" class="cv-modal-trigger block text-emerald-500 hover:text-white transition-colors duration-300 bg-transparent border-none p-0 cursor-pointer">
+                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                   <polyline points="14 2 14 8 20 8" />
                   <line x1="12" y1="18" x2="12" y2="12" />
                   <polyline points="9 15 12 18 15 15" />
                 </svg>
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
@@ -1001,34 +936,35 @@
     <!-- Scripts -->
     <script src="assets/js/script.js" defer></script>
 
-    <!-- Hamburger Menu JS -->
-    <script>
-      function openMobileMenu() {
-        var menu = document.getElementById('mobile-menu');
-        var drawer = document.getElementById('mobile-drawer');
-        menu.classList.remove('opacity-0', 'pointer-events-none');
-        drawer.classList.remove('translate-x-full');
-        menu.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeMobileMenu() {
-        var menu = document.getElementById('mobile-menu');
-        var drawer = document.getElementById('mobile-drawer');
-        menu.classList.add('opacity-0', 'pointer-events-none');
-        drawer.classList.add('translate-x-full');
-        menu.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-    </script>
+
 
     <!-- AOS – Animate On Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-      });
-    </script>
+
+
+    <!-- CV Modal -->
+    <div id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+      <div class="bg-[#111] border border-emerald-500/30 rounded-xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+        <!-- Header -->
+        <div class="flex justify-between items-center p-4 border-b border-gray-800">
+          <h3 id="cvModalTitle" class="text-white font-semibold">Preview</h3>
+          <div class="flex items-center gap-4">
+            <a href="./assets/docs/CV_AhmadDzaki.pdf" target="_blank" rel="noopener noreferrer" download="CV_Ahmad_Dzaki_Agate.pdf" class="text-gray-400 hover:text-[#10B981] transition-colors" title="Download PDF">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2 M7 10l5 5 5-5 M12 15V3" />
+              </svg>
+            </a>
+            <button id="closeCvBtn" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+          </div>
+        </div>
+        <!-- PDF Viewer -->
+        <div class="flex-grow w-full bg-gray-900">
+          <iframe src="./assets/docs/CV_AhmadDzaki.pdf" class="w-full h-full" frameborder="0"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+
   </body>
 </html>
