@@ -92,15 +92,6 @@ body {
 .btn-primary:hover::before {
   left: 100%;
 }
-.btn-primary:hover {
-  box-shadow:
-    0 0 40px rgba(16, 185, 129, 0.65),
-    inset 0 0 20px rgba(5, 150, 105, 0.2);
-  transform: translateY(-3px);
-}
-.btn-primary:active {
-  transform: translateY(-1px);
-}
 
 /* Fade-in animation for elements */
 @keyframes fadeInUp {
@@ -134,11 +125,6 @@ body {
 /* Skill card smooth hover */
 .skill-card {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.skill-card:hover {
-  border-color: rgba(16, 185, 129, 0.6);
-  background: #151515;
-  transform: translateY(-4px);
 }
 
 /* Section separator glow enhanced */
@@ -241,13 +227,4 @@ a {
 .skill-badge:nth-child(4),
 .soft-skill-badge:nth-child(4) {
   animation-delay: 2.4s;
-}
-
-.skill-badge:hover,
-.soft-skill-badge:hover {
-  animation-play-state: paused;
-  box-shadow:
-    0 0 18px rgba(16, 185, 129, 0.8),
-    inset 0 0 8px rgba(16, 185, 129, 0.4) !important;
-  border-color: #10b981 !important;
 }
