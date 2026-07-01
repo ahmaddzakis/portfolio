@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ahmad Dzaki — Page Not Found" />
+    <title>404 - Page Not Found</title>
+    <link rel="icon" type="image/png" href="assets/images/ADreal-removebg-preview.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-904BM3ZMV0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-904BM3ZMV0');
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                emerald: '#10B981',
+                darkGreen: '#059669',
+                dark: '#0F0F0F',
+                surface: '#161616',
+                border: '#222222',
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="antialiased overflow-x-hidden bg-[#0F0F0F] text-white flex flex-col min-h-screen">
+    
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-md bg-[#0F0F0F]/80">
+      <nav class="w-full max-w-7xl mx-auto px-5 md:px-10 h-16 flex items-center justify-between gap-4">
+        <a href="index.html" id="brand-logo" class="shrink-0 hover:opacity-80 transition-all duration-300 ease-in-out">
+          <img src="assets/images/ADreal-removebg-preview.png" alt="Logo inisial AD dengan gaya Mega Mendung" class="h-9 w-auto object-contain hover:opacity-80 transition-opacity" />
+        </a>
+      </nav>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center relative w-full pt-16">
+      
+      <!-- Background Glow Effect -->
+      <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-40">
+        <div class="w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-[#10B981] blur-[150px] md:blur-[250px] mix-blend-screen pointer-events-none -translate-y-10"></div>
+      </div>
+
+      <div class="z-10 text-center px-5 flex flex-col items-center">
+        <h1 class="text-[8rem] md:text-[12rem] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 leading-none drop-shadow-[0_0_25px_rgba(16,185,129,0.5)]">
+          404
+        </h1>
+        <h2 class="text-2xl md:text-4xl font-bold mt-4 text-gray-200">
+          Oops! You're lost in space.
+        </h2>
+        <p class="text-gray-400 mt-4 max-w-md mx-auto text-sm md:text-base">
+          Halaman yang Anda cari mungkin telah dihapus, namanya diganti, atau tidak pernah ada sama sekali.
+        </p>
+        
+        <a href="index.html" class="mt-8 inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-[#10B981] text-[#10B981] font-semibold text-sm tracking-widest hover:bg-[#10B981] hover:text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] uppercase group">
+          <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Kembali ke Home
+        </a>
+      </div>
+
+    </main>
+
+  </body>
+</html>
