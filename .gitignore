@@ -1,6 +1,3 @@
-# Image derivatives (re-generable)
-assets/images/**/*.webp
-
 # Utility scripts
 scripts/*.js
 
