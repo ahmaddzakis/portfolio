@@ -1,0 +1,14 @@
+# Image derivatives (re-generable)
+assets/images/**/*.webp
+
+# Utility scripts
+scripts/*.js
+
+# Node
+node_modules/
+package.json
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db

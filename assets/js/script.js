@@ -23,10 +23,12 @@ function closeMobileMenu() {
 
 // AOS – Animate On Scroll Init
 if (typeof AOS !== 'undefined') {
+  var motionSafe = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   AOS.init({
     duration: 800,
     once: true,
     offset: 100,
+    disable: function() { return !motionSafe; }
   });
 }
 
