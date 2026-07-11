@@ -228,3 +228,27 @@ a {
 .soft-skill-badge:nth-child(4) {
   animation-delay: 2.4s;
 }
+
+/* Image fade-in on load */
+@keyframes imgFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+.project-card img,
+#about img,
+#slider-slider img {
+  animation: imgFadeIn 0.5s ease-out forwards;
+}
+
+/* Mobile fine-tune */
+@media (max-width: 640px) {
+  #hero h1 span.text-5xl {
+    font-size: 2.75rem;
+  }
+  #hero h1 div span.text-3xl {
+    font-size: 1.6rem;
+  }
+  .project-card .p-6 {
+    padding: 1.25rem;
+  }
+}

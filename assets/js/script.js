@@ -2,18 +2,22 @@
 function openMobileMenu() {
   var menu = document.getElementById('mobile-menu');
   var drawer = document.getElementById('mobile-drawer');
+  var btn = document.getElementById('hamburger-btn');
   menu.classList.remove('opacity-0', 'pointer-events-none');
   drawer.classList.remove('translate-x-full');
   menu.setAttribute('aria-hidden', 'false');
+  if (btn) btn.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
   var menu = document.getElementById('mobile-menu');
   var drawer = document.getElementById('mobile-drawer');
+  var btn = document.getElementById('hamburger-btn');
   menu.classList.add('opacity-0', 'pointer-events-none');
   drawer.classList.add('translate-x-full');
   menu.setAttribute('aria-hidden', 'true');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 
@@ -223,7 +227,9 @@ if (javaText) {
 
 // Back to Top Button Logic
 const backToTopBtn = document.getElementById('backToTopBtn');
+const siteFooter = document.getElementById('site-footer');
 if (backToTopBtn) {
+  // Show/hide on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
       backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
@@ -240,6 +246,19 @@ if (backToTopBtn) {
       behavior: 'smooth'
     });
   });
+
+  // Lift button above footer when footer is visible
+  if (siteFooter) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        var footerHeight = siteFooter.offsetHeight;
+        backToTopBtn.style.bottom = (footerHeight + 24) + 'px';
+      } else {
+        backToTopBtn.style.bottom = '';
+      }
+    }, { threshold: 0 });
+    observer.observe(siteFooter);
+  }
 }
 
 // AJAX Formspree Form Submission
