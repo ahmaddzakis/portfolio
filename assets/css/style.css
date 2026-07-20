@@ -111,6 +111,16 @@ body {
 /* Project card hover effect */
 .project-card {
   animation: fadeInUp 0.8s ease-out backwards;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.55s ease,
+    box-shadow 0.65s ease,
+    background-color 0.4s ease !important;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #6ee7b7 !important;
+  box-shadow: 0 0 20px rgba(110, 231, 183, 0.45) !important;
 }
 .project-card:nth-child(1) {
   animation-delay: 0.1s;
@@ -122,9 +132,19 @@ body {
   animation-delay: 0.3s;
 }
 
-/* Skill card smooth hover */
+/* Skill card smooth hover — separate props for graceful neon fade */
 .skill-card {
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.55s ease,
+    box-shadow 0.65s ease,
+    background-color 0.4s ease !important;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: #6ee7b7 !important;
+  box-shadow: 0 0 20px rgba(110, 231, 183, 0.45) !important;
 }
 
 /* Section separator glow enhanced */
@@ -210,6 +230,22 @@ a {
 .skill-badge,
 .soft-skill-badge {
   animation: neon-pulse 3s infinite;
+  /* Smooth neon hover: each property transitions independently */
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.55s ease,
+    box-shadow 0.65s ease,
+    background-color 0.45s ease,
+    color 0.35s ease !important;
+}
+
+.skill-badge:hover,
+.soft-skill-badge:hover {
+  transform: translateY(-4px);
+  border-color: #6ee7b7 !important;
+  box-shadow: 0 0 18px rgba(110, 231, 183, 0.5) !important;
+  color: #6ee7b7 !important;
+  background-color: rgba(16, 185, 129, 0.1) !important;
 }
 
 .skill-badge:nth-child(1),
