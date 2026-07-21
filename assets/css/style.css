@@ -12,12 +12,151 @@ body {
 
 /* Navbar smooth animations */
 #navbar {
-  animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideDown 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    right 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Floating navbar state */
+#navbar.navbar-floating {
+  top: 14px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 860px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(12, 12, 12, 0.92) !important;
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Nav dalam pill: tanpa padding tambahan */
+#navbar.navbar-floating nav {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Mobile floating: lebih kecil & compact */
+@media (max-width: 768px) {
+  #navbar.navbar-floating {
+    width: calc(100% - 2rem);
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 9999px;
+  }
+}
+
+/* ── Desktop Nav Icon Links ─────────────────────────── */
+.nav-icon-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.6rem;
+  color: #6b7280;
+  transition:
+    color 0.35s ease,
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease;
+}
+.nav-icon-link:hover {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+}
+.nav-icon-link.active {
+  color: #10b981;
+}
+
+
+
+
+/* ── Floating Mobile Menu ───────────────────────────── */
+#mobile-menu {
+  transition: opacity 0.4s ease;
+}
+#mobile-drawer {
+  border-radius: 1.5rem;
+  right: 1rem;
+  top: 1rem;
+  height: auto;
+  max-height: calc(100dvh - 2rem);
+  width: min(340px, calc(100vw - 2rem));
+  background: rgba(12, 12, 12, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255,255,255,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transform: translateY(-16px) scale(0.96);
+  transition:
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.35s ease !important;
+  overflow-y: auto;
+}
+#mobile-drawer.menu-open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.85rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.mobile-nav-item:hover {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.08);
+  transform: translateX(4px);
+}
+.mobile-nav-item svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+.mobile-nav-item:hover svg {
+  opacity: 1;
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-12px);
   }
   to {
     opacity: 1;
@@ -32,7 +171,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   font-weight: 500;
 }
 .nav-link::after {
@@ -43,7 +182,7 @@ body {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, #10b981, #059669);
-  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   border-radius: 2px;
 }
 .nav-link:hover {
@@ -73,8 +212,8 @@ body {
 /* CTA hover glow + lift - enhanced */
 .btn-primary {
   transition:
-    box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
     background-color 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -112,7 +251,7 @@ body {
 .project-card {
   animation: fadeInUp 0.8s ease-out backwards;
   transition:
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
     border-color 0.55s ease,
     box-shadow 0.65s ease,
     background-color 0.4s ease !important;
@@ -135,7 +274,7 @@ body {
 /* Skill card smooth hover — separate props for graceful neon fade */
 .skill-card {
   transition:
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
     border-color 0.55s ease,
     box-shadow 0.65s ease,
     background-color 0.4s ease !important;
@@ -176,7 +315,7 @@ a {
 
 /* Timeline dot interaction */
 .timeline-item span {
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Skill Badge Animation */
@@ -198,7 +337,7 @@ a {
   }
 }
 .animate-pop-text {
-  animation: popText 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: popText 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* Hide Scrollbar */
@@ -232,7 +371,7 @@ a {
   animation: neon-pulse 3s infinite;
   /* Smooth neon hover: each property transitions independently */
   transition:
-    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     border-color 0.55s ease,
     box-shadow 0.65s ease,
     background-color 0.45s ease,

@@ -1,24 +1,63 @@
+// =====================================================
+// Floating Navbar on Scroll
+// =====================================================
+const navbar = document.getElementById('desktopNav');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    // Kondisi saat di-scroll (Floating Pill)
+    navbar.classList.remove('px-8', 'py-6', 'bg-transparent', 'w-full', 'max-w-[2000px]', 'border-transparent', 'rounded-none', 'shadow-none', 'mt-0', 'backdrop-blur-none');
+    navbar.classList.add(
+      'w-[calc(100%-2rem)]', // Lebar dinamis agar tidak mepet di mobile
+      'max-w-5xl', // Lebar mengecil maksimal di desktop
+      'px-6', 'py-3', // Padding mengecil
+      'mt-4', // Turun sedikit dari atap
+      'rounded-full', // Bentuk pil
+      'bg-[#0a0a0a]/80', 'backdrop-blur-md', // Efek glass
+      'border-gray-800', 'shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+    );
+  } else {
+    // Kondisi kembali ke atas (Full Width)
+    navbar.classList.remove(
+      'w-[calc(100%-2rem)]',
+      'max-w-5xl', 'px-6', 'py-3', 'mt-4', 'rounded-full',
+      'bg-[#0a0a0a]/80', 'backdrop-blur-md', 'border-gray-800', 'shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+    );
+    navbar.classList.add('px-8', 'py-6', 'bg-transparent', 'w-full', 'max-w-[2000px]', 'border-transparent', 'rounded-none', 'shadow-none', 'mt-0', 'backdrop-blur-none');
+  }
+});
+
 // Hamburger Menu Logic
 function openMobileMenu() {
   var menu = document.getElementById('mobile-menu');
   var drawer = document.getElementById('mobile-drawer');
   var btn = document.getElementById('hamburger-btn');
   menu.classList.remove('opacity-0', 'pointer-events-none');
-  drawer.classList.remove('translate-x-full');
   menu.setAttribute('aria-hidden', 'false');
   if (btn) btn.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('overflow-hidden');
+  // Trigger animation — small delay so CSS transition picks up
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      drawer.classList.add('menu-open');
+      drawer.style.opacity = '1';
+    });
+  });
 }
 
 function closeMobileMenu() {
   var menu = document.getElementById('mobile-menu');
   var drawer = document.getElementById('mobile-drawer');
   var btn = document.getElementById('hamburger-btn');
-  menu.classList.add('opacity-0', 'pointer-events-none');
-  drawer.classList.add('translate-x-full');
+  drawer.classList.remove('menu-open');
+  drawer.style.opacity = '0';
   menu.setAttribute('aria-hidden', 'true');
   if (btn) btn.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
+  document.body.classList.remove('overflow-hidden');
+  // Wait for animation to finish before hiding
+  setTimeout(function() {
+    menu.classList.add('opacity-0', 'pointer-events-none');
+  }, 400);
 }
 
 // AOS – Animate On Scroll Init
@@ -26,6 +65,7 @@ if (typeof AOS !== 'undefined') {
   var motionSafe = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   AOS.init({
     duration: 800,
+    easing: 'ease-out-cubic', // Membuat scroll animasi jauh lebih mulus
     once: true,
     offset: 100,
     disable: function() { return !motionSafe; }
