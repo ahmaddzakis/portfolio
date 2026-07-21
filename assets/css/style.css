@@ -6,7 +6,7 @@ body {
 
 /* Hero radial glow */
 .hero-bg-glow {
-  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(16, 185, 129, 0.18), transparent 70%);
+  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(110,231,183,0.12), transparent 70%);
   pointer-events: none;
 }
 
@@ -35,14 +35,15 @@ body {
   width: calc(100% - 3rem);
   max-width: 860px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(110, 231, 183, 0.35) !important;
   background-color: rgba(12, 12, 12, 0.92) !important;
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+    0 0 0 1px rgba(110, 231, 183, 0.12),
+    0 0 20px rgba(110, 231, 183, 0.08),
+    inset 0 1px 0 rgba(110, 231, 183, 0.1);
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -65,7 +66,7 @@ body {
   }
 }
 
-/* ── Desktop Nav Icon Links ─────────────────────────── */
+/* â”€â”€ Desktop Nav Icon Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .nav-icon-link {
   position: relative;
   display: flex;
@@ -81,19 +82,19 @@ body {
     box-shadow 0.3s ease;
 }
 .nav-icon-link:hover {
-  color: #10b981;
-  background-color: rgba(16, 185, 129, 0.1);
+  color: #6ee7b7;
+  background-color: rgba(110,231,183,0.1);
   transform: translateY(-2px);
-  box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 14px rgba(110,231,183,0.25);
 }
 .nav-icon-link.active {
-  color: #10b981;
+  color: #6ee7b7;
 }
 
 
 
 
-/* ── Floating Mobile Menu ───────────────────────────── */
+/* â”€â”€ Floating Mobile Menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #mobile-menu {
   transition: opacity 0.4s ease;
 }
@@ -138,8 +139,8 @@ body {
     transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .mobile-nav-item:hover {
-  color: #10b981;
-  background-color: rgba(16, 185, 129, 0.08);
+  color: #6ee7b7;
+  background-color: rgba(110,231,183,0.08);
   transform: translateX(4px);
 }
 .mobile-nav-item svg {
@@ -271,7 +272,7 @@ body {
   animation-delay: 0.3s;
 }
 
-/* Skill card smooth hover — separate props for graceful neon fade */
+/* Skill card smooth hover â€” separate props for graceful neon fade */
 .skill-card {
   transition:
     transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
@@ -288,7 +289,7 @@ body {
 
 /* Section separator glow enhanced */
 .section-divider {
-  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(110,231,183,0.5), transparent);
   animation: pulse 3s ease-in-out infinite;
 }
 @keyframes pulse {
@@ -354,7 +355,7 @@ a {
   0%,
   100% {
     box-shadow:
-      0 0 4px rgba(16, 185, 129, 0.1),
+      0 0 4px rgba(110,231,183,0.1),
       inset 0 0 2px rgba(16, 185, 129, 0.05);
     border-color: rgba(16, 185, 129, 0.2);
   }
@@ -384,7 +385,7 @@ a {
   border-color: #6ee7b7 !important;
   box-shadow: 0 0 18px rgba(110, 231, 183, 0.5) !important;
   color: #6ee7b7 !important;
-  background-color: rgba(16, 185, 129, 0.1) !important;
+  background-color: rgba(110,231,183,0.1) !important;
 }
 
 .skill-badge:nth-child(1),
@@ -404,7 +405,7 @@ a {
   animation-delay: 2.4s;
 }
 
-/* Reduced motion — disable animations for accessibility */
+/* Reduced motion â€” disable animations for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -446,3 +447,16 @@ a {
     padding: 1.25rem;
   }
 }
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: #6ee7b7;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+  transition: width 0.15s ease-out;
+}
+

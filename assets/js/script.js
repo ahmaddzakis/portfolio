@@ -14,14 +14,14 @@ window.addEventListener('scroll', () => {
       'mt-4', // Turun sedikit dari atap
       'rounded-full', // Bentuk pil
       'bg-[#0a0a0a]/80', 'backdrop-blur-md', // Efek glass
-      'border-gray-800', 'shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+      'border-[#10B981]/40', 'shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
     );
   } else {
     // Kondisi kembali ke atas (Full Width)
     navbar.classList.remove(
       'w-[calc(100%-2rem)]',
       'max-w-5xl', 'px-6', 'py-3', 'mt-4', 'rounded-full',
-      'bg-[#0a0a0a]/80', 'backdrop-blur-md', 'border-gray-800', 'shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+      'bg-[#0a0a0a]/80', 'backdrop-blur-md', 'border-[#10B981]/40', 'shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
     );
     navbar.classList.add('px-8', 'py-6', 'bg-transparent', 'w-full', 'max-w-[2000px]', 'border-transparent', 'rounded-none', 'shadow-none', 'mt-0', 'backdrop-blur-none');
   }
@@ -352,3 +352,110 @@ if (contactForm && formStatus) {
   });
 }
 
+// =====================================================
+// Scroll Progress Bar
+// =====================================================
+const scrollProgress = document.getElementById('scroll-progress');
+if (scrollProgress) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    ) - document.documentElement.clientHeight;
+    
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = scrollPercent + '%';
+  });
+}
+
+// =====================================================
+// Particles.js Interactive Background
+// =====================================================
+if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+  particlesJS('particles-js', {
+    "particles": {
+      "number": {
+        "value": window.innerWidth < 768 ? 15 : 40,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#10B981"
+      },
+      "shape": {
+        "type": "circle",
+      },
+      "opacity": {
+        "value": 0.3,
+        "random": true,
+        "anim": {
+          "enable": true,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#10B981",
+        "opacity": 0.2,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 1.5,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+      }
+    },
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 250,
+          "line_linked": {
+            "opacity": 0.5
+          }
+        },
+        "push": {
+          "particles_nb": 3
+        }
+      }
+    },
+    "retina_detect": true
+  });
+}
+
+// =====================================================
+// Pause Animasi Saat Tab Tidak Aktif — Hemat CPU/GPU
+// =====================================================
+document.addEventListener('visibilitychange', () => {
+  const animatedEls = document.querySelectorAll('.mega-mendung-slide, .animate-marquee');
+  const paused = document.hidden ? 'paused' : 'running';
+  animatedEls.forEach(el => {
+    el.style.animationPlayState = paused;
+  });
+});
